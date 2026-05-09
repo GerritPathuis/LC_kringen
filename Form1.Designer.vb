@@ -25,11 +25,15 @@ Partial Class Form1
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         PictureBox1 = New PictureBox()
         Label1 = New Label()
-        NumericUpDown1 = New NumericUpDown()
         NumericUpDown2 = New NumericUpDown()
         Label2 = New Label()
         TabControl1 = New TabControl()
         TabPage1 = New TabPage()
+        NumericUpDown1 = New NumericUpDown()
+        Label11 = New Label()
+        TextBox2 = New TextBox()
+        Label10 = New Label()
+        TextBox1 = New TextBox()
         Button1 = New Button()
         Label6 = New Label()
         NumericUpDown4 = New NumericUpDown()
@@ -48,10 +52,10 @@ Partial Class Form1
         Label9 = New Label()
         NumericUpDown8 = New NumericUpDown()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
-        CType(NumericUpDown1, ComponentModel.ISupportInitialize).BeginInit()
         CType(NumericUpDown2, ComponentModel.ISupportInitialize).BeginInit()
         TabControl1.SuspendLayout()
         TabPage1.SuspendLayout()
+        CType(NumericUpDown1, ComponentModel.ISupportInitialize).BeginInit()
         CType(NumericUpDown4, ComponentModel.ISupportInitialize).BeginInit()
         CType(NumericUpDown3, ComponentModel.ISupportInitialize).BeginInit()
         TabPage2.SuspendLayout()
@@ -66,9 +70,9 @@ Partial Class Form1
         ' 
         PictureBox1.Dock = DockStyle.Right
         PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
-        PictureBox1.Location = New Point(649, 3)
+        PictureBox1.Location = New Point(512, 3)
         PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(559, 682)
+        PictureBox1.Size = New Size(696, 682)
         PictureBox1.SizeMode = PictureBoxSizeMode.Zoom
         PictureBox1.TabIndex = 0
         PictureBox1.TabStop = False
@@ -77,33 +81,22 @@ Partial Class Form1
         ' 
         Label1.AutoSize = True
         Label1.Font = New Font("Segoe UI", 9.857143F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label1.Location = New Point(76, 81)
+        Label1.Location = New Point(76, 256)
         Label1.Name = "Label1"
-        Label1.Size = New Size(186, 32)
+        Label1.Size = New Size(229, 32)
         Label1.TabIndex = 1
-        Label1.Text = "Frequency [kHz]"
-        ' 
-        ' NumericUpDown1
-        ' 
-        NumericUpDown1.DecimalPlaces = 1
-        NumericUpDown1.Location = New Point(451, 81)
-        NumericUpDown1.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
-        NumericUpDown1.Name = "NumericUpDown1"
-        NumericUpDown1.Size = New Size(131, 35)
-        NumericUpDown1.TabIndex = 2
-        NumericUpDown1.TextAlign = HorizontalAlignment.Center
-        NumericUpDown1.Value = New Decimal(New Integer() {228, 0, 0, 65536})
+        Label1.Text = "CS, Capacitance [uF]"
         ' 
         ' NumericUpDown2
         ' 
         NumericUpDown2.DecimalPlaces = 1
-        NumericUpDown2.Location = New Point(451, 122)
+        NumericUpDown2.Location = New Point(322, 122)
         NumericUpDown2.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         NumericUpDown2.Name = "NumericUpDown2"
         NumericUpDown2.Size = New Size(131, 35)
         NumericUpDown2.TabIndex = 4
         NumericUpDown2.TextAlign = HorizontalAlignment.Center
-        NumericUpDown2.Value = New Decimal(New Integer() {22, 0, 0, 0})
+        NumericUpDown2.Value = New Decimal(New Integer() {5, 0, 0, 0})
         ' 
         ' Label2
         ' 
@@ -111,9 +104,9 @@ Partial Class Form1
         Label2.Font = New Font("Segoe UI", 9.857143F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Label2.Location = New Point(76, 122)
         Label2.Name = "Label2"
-        Label2.Size = New Size(253, 32)
+        Label2.Size = New Size(204, 32)
         Label2.TabIndex = 3
-        Label2.Text = "Piezo Capacitance [nF]"
+        Label2.Text = "I; Current Peak [A]"
         ' 
         ' TabControl1
         ' 
@@ -128,6 +121,11 @@ Partial Class Form1
         ' 
         ' TabPage1
         ' 
+        TabPage1.Controls.Add(NumericUpDown1)
+        TabPage1.Controls.Add(Label11)
+        TabPage1.Controls.Add(TextBox2)
+        TabPage1.Controls.Add(Label10)
+        TabPage1.Controls.Add(TextBox1)
         TabPage1.Controls.Add(Button1)
         TabPage1.Controls.Add(Label6)
         TabPage1.Controls.Add(NumericUpDown4)
@@ -138,7 +136,6 @@ Partial Class Form1
         TabPage1.Controls.Add(NumericUpDown2)
         TabPage1.Controls.Add(Label1)
         TabPage1.Controls.Add(Label2)
-        TabPage1.Controls.Add(NumericUpDown1)
         TabPage1.Location = New Point(4, 39)
         TabPage1.Name = "TabPage1"
         TabPage1.Padding = New Padding(3)
@@ -147,9 +144,56 @@ Partial Class Form1
         TabPage1.Text = "Snubber"
         TabPage1.UseVisualStyleBackColor = True
         ' 
+        ' NumericUpDown1
+        ' 
+        NumericUpDown1.DecimalPlaces = 1
+        NumericUpDown1.Location = New Point(322, 78)
+        NumericUpDown1.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        NumericUpDown1.Name = "NumericUpDown1"
+        NumericUpDown1.Size = New Size(131, 35)
+        NumericUpDown1.TabIndex = 16
+        NumericUpDown1.TextAlign = HorizontalAlignment.Center
+        NumericUpDown1.Value = New Decimal(New Integer() {282, 0, 0, 65536})
+        ' 
+        ' Label11
+        ' 
+        Label11.AutoSize = True
+        Label11.Font = New Font("Segoe UI", 9.857143F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label11.Location = New Point(76, 78)
+        Label11.Name = "Label11"
+        Label11.Size = New Size(186, 32)
+        Label11.TabIndex = 15
+        Label11.Text = "Frequency [kHz]"
+        ' 
+        ' TextBox2
+        ' 
+        TextBox2.Location = New Point(322, 303)
+        TextBox2.Name = "TextBox2"
+        TextBox2.Size = New Size(131, 35)
+        TextBox2.TabIndex = 14
+        TextBox2.TextAlign = HorizontalAlignment.Center
+        ' 
+        ' Label10
+        ' 
+        Label10.AutoSize = True
+        Label10.Font = New Font("Segoe UI", 9.857143F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label10.Location = New Point(76, 298)
+        Label10.Name = "Label10"
+        Label10.Size = New Size(237, 32)
+        Label10.TabIndex = 13
+        Label10.Text = "RS, Resistance [Ohm]"
+        ' 
+        ' TextBox1
+        ' 
+        TextBox1.Location = New Point(322, 259)
+        TextBox1.Name = "TextBox1"
+        TextBox1.Size = New Size(131, 35)
+        TextBox1.TabIndex = 12
+        TextBox1.TextAlign = HorizontalAlignment.Center
+        ' 
         ' Button1
         ' 
-        Button1.Location = New Point(1510, 551)
+        Button1.Location = New Point(76, 536)
         Button1.Name = "Button1"
         Button1.Size = New Size(131, 40)
         Button1.TabIndex = 11
@@ -168,14 +212,15 @@ Partial Class Form1
         ' 
         ' NumericUpDown4
         ' 
-        NumericUpDown4.Location = New Point(451, 209)
-        NumericUpDown4.Maximum = New Decimal(New Integer() {10000, 0, 0, 0})
-        NumericUpDown4.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        NumericUpDown4.DecimalPlaces = 1
+        NumericUpDown4.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
+        NumericUpDown4.Location = New Point(322, 209)
+        NumericUpDown4.Minimum = New Decimal(New Integer() {1, 0, 0, 65536})
         NumericUpDown4.Name = "NumericUpDown4"
         NumericUpDown4.Size = New Size(131, 35)
         NumericUpDown4.TabIndex = 8
         NumericUpDown4.TextAlign = HorizontalAlignment.Center
-        NumericUpDown4.Value = New Decimal(New Integer() {472, 0, 0, 0})
+        NumericUpDown4.Value = New Decimal(New Integer() {1, 0, 0, 0})
         ' 
         ' Label4
         ' 
@@ -183,20 +228,20 @@ Partial Class Form1
         Label4.Font = New Font("Segoe UI", 9.857143F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Label4.Location = New Point(76, 209)
         Label4.Name = "Label4"
-        Label4.Size = New Size(324, 32)
+        Label4.Size = New Size(211, 32)
         Label4.TabIndex = 7
-        Label4.Text = "Piezo Parelle Inductance [nH]"
+        Label4.Text = "tr; Voltage rise [us]"
         ' 
         ' NumericUpDown3
         ' 
-        NumericUpDown3.Location = New Point(451, 167)
+        NumericUpDown3.Location = New Point(322, 167)
         NumericUpDown3.Maximum = New Decimal(New Integer() {10000, 0, 0, 0})
         NumericUpDown3.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         NumericUpDown3.Name = "NumericUpDown3"
         NumericUpDown3.Size = New Size(131, 35)
         NumericUpDown3.TabIndex = 6
         NumericUpDown3.TextAlign = HorizontalAlignment.Center
-        NumericUpDown3.Value = New Decimal(New Integer() {300, 0, 0, 0})
+        NumericUpDown3.Value = New Decimal(New Integer() {12, 0, 0, 0})
         ' 
         ' Label3
         ' 
@@ -204,9 +249,9 @@ Partial Class Form1
         Label3.Font = New Font("Segoe UI", 9.857143F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Label3.Location = New Point(76, 167)
         Label3.Name = "Label3"
-        Label3.Size = New Size(322, 32)
+        Label3.Size = New Size(215, 32)
         Label3.TabIndex = 5
-        Label3.Text = "Piezo Serie Resistance [Ohm]"
+        Label3.Text = "V; Voltage peak [V]"
         ' 
         ' TabPage2
         ' 
@@ -230,7 +275,7 @@ Partial Class Form1
         ' 
         ' Button2
         ' 
-        Button2.Location = New Point(349, 491)
+        Button2.Location = New Point(179, 499)
         Button2.Name = "Button2"
         Button2.Size = New Size(141, 41)
         Button2.TabIndex = 18
@@ -339,13 +384,13 @@ Partial Class Form1
         ClientSize = New Size(1219, 731)
         Controls.Add(TabControl1)
         Name = "Form1"
-        Text = "Form1"
+        Text = "LC kringen"
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
-        CType(NumericUpDown1, ComponentModel.ISupportInitialize).EndInit()
         CType(NumericUpDown2, ComponentModel.ISupportInitialize).EndInit()
         TabControl1.ResumeLayout(False)
         TabPage1.ResumeLayout(False)
         TabPage1.PerformLayout()
+        CType(NumericUpDown1, ComponentModel.ISupportInitialize).EndInit()
         CType(NumericUpDown4, ComponentModel.ISupportInitialize).EndInit()
         CType(NumericUpDown3, ComponentModel.ISupportInitialize).EndInit()
         TabPage2.ResumeLayout(False)
@@ -360,7 +405,6 @@ Partial Class Form1
 
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents NumericUpDown1 As NumericUpDown
     Friend WithEvents NumericUpDown2 As NumericUpDown
     Friend WithEvents Label2 As Label
     Friend WithEvents TabControl1 As TabControl
@@ -382,5 +426,10 @@ Partial Class Form1
     Friend WithEvents Label8 As Label
     Friend WithEvents Label9 As Label
     Friend WithEvents NumericUpDown8 As NumericUpDown
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents Label10 As Label
+    Friend WithEvents NumericUpDown1 As NumericUpDown
+    Friend WithEvents Label11 As Label
 
 End Class
