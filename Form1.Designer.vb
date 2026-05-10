@@ -56,6 +56,8 @@ Partial Class Form1
         NumericUpDown6 = New NumericUpDown()
         Label7 = New Label()
         GroupBox5 = New GroupBox()
+        NumericUpDown8 = New NumericUpDown()
+        Label26 = New Label()
         NumericUpDown7 = New NumericUpDown()
         TextBox9 = New TextBox()
         Label9 = New Label()
@@ -110,6 +112,7 @@ Partial Class Form1
         GroupBox6.SuspendLayout()
         CType(NumericUpDown6, ComponentModel.ISupportInitialize).BeginInit()
         GroupBox5.SuspendLayout()
+        CType(NumericUpDown8, ComponentModel.ISupportInitialize).BeginInit()
         CType(NumericUpDown7, ComponentModel.ISupportInitialize).BeginInit()
         CType(NumericUpDown5, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
@@ -136,7 +139,7 @@ Partial Class Form1
         PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
         PictureBox1.Location = New Point(556, 3)
         PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(754, 705)
+        PictureBox1.Size = New Size(754, 837)
         PictureBox1.SizeMode = PictureBoxSizeMode.Zoom
         PictureBox1.TabIndex = 0
         PictureBox1.TabStop = False
@@ -183,7 +186,7 @@ Partial Class Form1
         TabControl1.Location = New Point(0, 0)
         TabControl1.Name = "TabControl1"
         TabControl1.SelectedIndex = 0
-        TabControl1.Size = New Size(1321, 755)
+        TabControl1.Size = New Size(1321, 887)
         TabControl1.TabIndex = 5
         ' 
         ' TabPage1
@@ -196,7 +199,7 @@ Partial Class Form1
         TabPage1.Location = New Point(4, 40)
         TabPage1.Name = "TabPage1"
         TabPage1.Padding = New Padding(3)
-        TabPage1.Size = New Size(1313, 711)
+        TabPage1.Size = New Size(1313, 843)
         TabPage1.TabIndex = 0
         TabPage1.Text = "Snubber"
         TabPage1.UseVisualStyleBackColor = True
@@ -348,17 +351,17 @@ Partial Class Form1
         TabPage2.Controls.Add(GroupBox5)
         TabPage2.Controls.Add(Button2)
         TabPage2.Controls.Add(PictureBox2)
-        TabPage2.Location = New Point(4, 39)
+        TabPage2.Location = New Point(4, 40)
         TabPage2.Name = "TabPage2"
         TabPage2.Padding = New Padding(3)
-        TabPage2.Size = New Size(1313, 712)
+        TabPage2.Size = New Size(1313, 843)
         TabPage2.TabIndex = 1
         TabPage2.Text = "LC Resonance"
         TabPage2.UseVisualStyleBackColor = True
         ' 
         ' TextBox13
         ' 
-        TextBox13.Location = New Point(34, 486)
+        TextBox13.Location = New Point(34, 548)
         TextBox13.Multiline = True
         TextBox13.Name = "TextBox13"
         TextBox13.Size = New Size(511, 138)
@@ -376,7 +379,7 @@ Partial Class Form1
         GroupBox6.Controls.Add(Label16)
         GroupBox6.Controls.Add(NumericUpDown6)
         GroupBox6.Controls.Add(Label7)
-        GroupBox6.Location = New Point(34, 209)
+        GroupBox6.Location = New Point(34, 271)
         GroupBox6.Name = "GroupBox6"
         GroupBox6.Size = New Size(511, 256)
         GroupBox6.TabIndex = 28
@@ -386,7 +389,7 @@ Partial Class Form1
         ' TextBox14
         ' 
         TextBox14.Font = New Font("Segoe UI", 9.857143F)
-        TextBox14.Location = New Point(305, 212)
+        TextBox14.Location = New Point(348, 212)
         TextBox14.Name = "TextBox14"
         TextBox14.Size = New Size(142, 38)
         TextBox14.TabIndex = 34
@@ -405,7 +408,7 @@ Partial Class Form1
         ' TextBox12
         ' 
         TextBox12.Font = New Font("Segoe UI", 9.857143F)
-        TextBox12.Location = New Point(305, 169)
+        TextBox12.Location = New Point(348, 169)
         TextBox12.Name = "TextBox12"
         TextBox12.Size = New Size(142, 38)
         TextBox12.TabIndex = 32
@@ -424,7 +427,7 @@ Partial Class Form1
         ' TextBox11
         ' 
         TextBox11.Font = New Font("Segoe UI", 9.857143F)
-        TextBox11.Location = New Point(305, 81)
+        TextBox11.Location = New Point(348, 81)
         TextBox11.Name = "TextBox11"
         TextBox11.Size = New Size(142, 38)
         TextBox11.TabIndex = 30
@@ -443,7 +446,7 @@ Partial Class Form1
         ' TextBox10
         ' 
         TextBox10.Font = New Font("Segoe UI", 9.857143F)
-        TextBox10.Location = New Point(305, 37)
+        TextBox10.Location = New Point(348, 37)
         TextBox10.Name = "TextBox10"
         TextBox10.Size = New Size(142, 38)
         TextBox10.TabIndex = 28
@@ -463,7 +466,7 @@ Partial Class Form1
         ' 
         NumericUpDown6.DecimalPlaces = 1
         NumericUpDown6.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
-        NumericUpDown6.Location = New Point(305, 125)
+        NumericUpDown6.Location = New Point(348, 125)
         NumericUpDown6.Maximum = New Decimal(New Integer() {10, 0, 0, 0})
         NumericUpDown6.Name = "NumericUpDown6"
         NumericUpDown6.Size = New Size(142, 38)
@@ -483,6 +486,8 @@ Partial Class Form1
         ' 
         ' GroupBox5
         ' 
+        GroupBox5.Controls.Add(NumericUpDown8)
+        GroupBox5.Controls.Add(Label26)
         GroupBox5.Controls.Add(NumericUpDown7)
         GroupBox5.Controls.Add(TextBox9)
         GroupBox5.Controls.Add(Label9)
@@ -491,16 +496,39 @@ Partial Class Form1
         GroupBox5.Controls.Add(Label5)
         GroupBox5.Location = New Point(34, 19)
         GroupBox5.Name = "GroupBox5"
-        GroupBox5.Size = New Size(510, 184)
+        GroupBox5.Size = New Size(510, 224)
         GroupBox5.TabIndex = 27
         GroupBox5.TabStop = False
         GroupBox5.Text = "LC Series Resonance"
+        ' 
+        ' NumericUpDown8
+        ' 
+        NumericUpDown8.DecimalPlaces = 1
+        NumericUpDown8.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
+        NumericUpDown8.Location = New Point(350, 81)
+        NumericUpDown8.Maximum = New Decimal(New Integer() {100000, 0, 0, 0})
+        NumericUpDown8.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        NumericUpDown8.Name = "NumericUpDown8"
+        NumericUpDown8.Size = New Size(142, 38)
+        NumericUpDown8.TabIndex = 28
+        NumericUpDown8.TextAlign = HorizontalAlignment.Center
+        NumericUpDown8.Value = New Decimal(New Integer() {22, 0, 0, 65536})
+        ' 
+        ' Label26
+        ' 
+        Label26.AutoSize = True
+        Label26.Font = New Font("Segoe UI", 9.857143F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label26.Location = New Point(20, 87)
+        Label26.Name = "Label26"
+        Label26.Size = New Size(284, 32)
+        Label26.TabIndex = 27
+        Label26.Text = "X2 Cap parallel Piezo [uF]"
         ' 
         ' NumericUpDown7
         ' 
         NumericUpDown7.DecimalPlaces = 1
         NumericUpDown7.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
-        NumericUpDown7.Location = New Point(307, 37)
+        NumericUpDown7.Location = New Point(350, 37)
         NumericUpDown7.Maximum = New Decimal(New Integer() {100000, 0, 0, 0})
         NumericUpDown7.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         NumericUpDown7.Name = "NumericUpDown7"
@@ -512,7 +540,7 @@ Partial Class Form1
         ' TextBox9
         ' 
         TextBox9.Font = New Font("Segoe UI", 9.857143F)
-        TextBox9.Location = New Point(307, 125)
+        TextBox9.Location = New Point(348, 170)
         TextBox9.Name = "TextBox9"
         TextBox9.Size = New Size(142, 38)
         TextBox9.TabIndex = 26
@@ -524,15 +552,15 @@ Partial Class Form1
         Label9.Font = New Font("Segoe UI", 9.857143F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Label9.Location = New Point(20, 43)
         Label9.Name = "Label9"
-        Label9.Size = New Size(189, 32)
+        Label9.Size = New Size(259, 32)
         Label9.TabIndex = 11
-        Label9.Text = "Capacitance [nF]"
+        Label9.Text = "Capacitance PIEZO [nF]"
         ' 
         ' Label8
         ' 
         Label8.AutoSize = True
         Label8.Font = New Font("Segoe UI", 9.857143F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label8.Location = New Point(20, 129)
+        Label8.Location = New Point(18, 174)
         Label8.Name = "Label8"
         Label8.Size = New Size(186, 32)
         Label8.TabIndex = 9
@@ -542,7 +570,7 @@ Partial Class Form1
         ' 
         NumericUpDown5.DecimalPlaces = 1
         NumericUpDown5.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
-        NumericUpDown5.Location = New Point(307, 81)
+        NumericUpDown5.Location = New Point(348, 126)
         NumericUpDown5.Maximum = New Decimal(New Integer() {1000, 0, 0, 0})
         NumericUpDown5.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         NumericUpDown5.Name = "NumericUpDown5"
@@ -555,7 +583,7 @@ Partial Class Form1
         ' 
         Label5.AutoSize = True
         Label5.Font = New Font("Segoe UI", 9.857143F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label5.Location = New Point(20, 87)
+        Label5.Location = New Point(18, 132)
         Label5.Name = "Label5"
         Label5.Size = New Size(183, 32)
         Label5.TabIndex = 15
@@ -563,7 +591,7 @@ Partial Class Form1
         ' 
         ' Button2
         ' 
-        Button2.Location = New Point(195, 645)
+        Button2.Location = New Point(195, 707)
         Button2.Name = "Button2"
         Button2.Size = New Size(153, 42)
         Button2.TabIndex = 18
@@ -576,7 +604,7 @@ Partial Class Form1
         PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
         PictureBox2.Location = New Point(594, 3)
         PictureBox2.Name = "PictureBox2"
-        PictureBox2.Size = New Size(716, 706)
+        PictureBox2.Size = New Size(716, 837)
         PictureBox2.SizeMode = PictureBoxSizeMode.Zoom
         PictureBox2.TabIndex = 17
         PictureBox2.TabStop = False
@@ -591,7 +619,7 @@ Partial Class Form1
         TabPage3.Location = New Point(4, 39)
         TabPage3.Name = "TabPage3"
         TabPage3.Padding = New Padding(3)
-        TabPage3.Size = New Size(1313, 712)
+        TabPage3.Size = New Size(1313, 844)
         TabPage3.TabIndex = 2
         TabPage3.Text = "LC filters"
         TabPage3.UseVisualStyleBackColor = True
@@ -705,7 +733,7 @@ Partial Class Form1
         PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), Image)
         PictureBox3.Location = New Point(770, 3)
         PictureBox3.Name = "PictureBox3"
-        PictureBox3.Size = New Size(540, 706)
+        PictureBox3.Size = New Size(540, 838)
         PictureBox3.SizeMode = PictureBoxSizeMode.Zoom
         PictureBox3.TabIndex = 18
         PictureBox3.TabStop = False
@@ -719,7 +747,7 @@ Partial Class Form1
         TabPage4.Location = New Point(4, 39)
         TabPage4.Name = "TabPage4"
         TabPage4.Padding = New Padding(3)
-        TabPage4.Size = New Size(1313, 712)
+        TabPage4.Size = New Size(1313, 844)
         TabPage4.TabIndex = 3
         TabPage4.Text = "Inductor Loss"
         TabPage4.UseVisualStyleBackColor = True
@@ -730,7 +758,7 @@ Partial Class Form1
         PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), Image)
         PictureBox4.Location = New Point(770, 3)
         PictureBox4.Name = "PictureBox4"
-        PictureBox4.Size = New Size(540, 706)
+        PictureBox4.Size = New Size(540, 838)
         PictureBox4.SizeMode = PictureBoxSizeMode.Zoom
         PictureBox4.TabIndex = 28
         PictureBox4.TabStop = False
@@ -906,10 +934,10 @@ Partial Class Form1
         TabPage5.Controls.Add(Button5)
         TabPage5.Controls.Add(GroupBox7)
         TabPage5.Controls.Add(PictureBox5)
-        TabPage5.Location = New Point(4, 40)
+        TabPage5.Location = New Point(4, 39)
         TabPage5.Name = "TabPage5"
         TabPage5.Padding = New Padding(3)
-        TabPage5.Size = New Size(1313, 711)
+        TabPage5.Size = New Size(1313, 844)
         TabPage5.TabIndex = 4
         TabPage5.Text = "Capacitors"
         TabPage5.UseVisualStyleBackColor = True
@@ -955,7 +983,7 @@ Partial Class Form1
         ' 
         AutoScaleDimensions = New SizeF(13F, 31F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1321, 755)
+        ClientSize = New Size(1321, 887)
         Controls.Add(TabControl1)
         Font = New Font("Segoe UI", 9.857143F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Name = "Form1"
@@ -977,6 +1005,7 @@ Partial Class Form1
         CType(NumericUpDown6, ComponentModel.ISupportInitialize).EndInit()
         GroupBox5.ResumeLayout(False)
         GroupBox5.PerformLayout()
+        CType(NumericUpDown8, ComponentModel.ISupportInitialize).EndInit()
         CType(NumericUpDown7, ComponentModel.ISupportInitialize).EndInit()
         CType(NumericUpDown5, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
@@ -1078,5 +1107,7 @@ Partial Class Form1
     Friend WithEvents PictureBox5 As PictureBox
     Friend WithEvents TextBox15 As TextBox
     Friend WithEvents Button5 As Button
+    Friend WithEvents NumericUpDown8 As NumericUpDown
+    Friend WithEvents Label26 As Label
 
 End Class
