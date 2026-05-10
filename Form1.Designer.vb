@@ -512,7 +512,7 @@ Partial Class Form1
         NumericUpDown8.Size = New Size(142, 38)
         NumericUpDown8.TabIndex = 28
         NumericUpDown8.TextAlign = HorizontalAlignment.Center
-        NumericUpDown8.Value = New Decimal(New Integer() {22, 0, 0, 65536})
+        NumericUpDown8.Value = New Decimal(New Integer() {44, 0, 0, 65536})
         ' 
         ' Label26
         ' 
@@ -577,7 +577,7 @@ Partial Class Form1
         NumericUpDown5.Size = New Size(142, 38)
         NumericUpDown5.TabIndex = 16
         NumericUpDown5.TextAlign = HorizontalAlignment.Center
-        NumericUpDown5.Value = New Decimal(New Integer() {55, 0, 0, 65536})
+        NumericUpDown5.Value = New Decimal(New Integer() {12, 0, 0, 0})
         ' 
         ' Label5
         ' 
