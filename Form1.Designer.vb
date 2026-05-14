@@ -43,6 +43,10 @@ Partial Class Form1
         Button1 = New Button()
         Label6 = New Label()
         TabPage2 = New TabPage()
+        Button9 = New Button()
+        Button8 = New Button()
+        Button7 = New Button()
+        Button6 = New Button()
         TextBox13 = New TextBox()
         GroupBox5 = New GroupBox()
         TextBox14 = New TextBox()
@@ -346,17 +350,57 @@ Partial Class Form1
         ' 
         ' TabPage2
         ' 
+        TabPage2.Controls.Add(Button9)
+        TabPage2.Controls.Add(Button8)
+        TabPage2.Controls.Add(Button7)
+        TabPage2.Controls.Add(Button6)
         TabPage2.Controls.Add(TextBox13)
         TabPage2.Controls.Add(GroupBox5)
         TabPage2.Controls.Add(Button2)
         TabPage2.Controls.Add(PictureBox2)
-        TabPage2.Location = New Point(4, 39)
+        TabPage2.Location = New Point(4, 40)
         TabPage2.Name = "TabPage2"
         TabPage2.Padding = New Padding(3)
-        TabPage2.Size = New Size(1313, 740)
+        TabPage2.Size = New Size(1313, 739)
         TabPage2.TabIndex = 1
         TabPage2.Text = "LC Resonance"
         TabPage2.UseVisualStyleBackColor = True
+        ' 
+        ' Button9
+        ' 
+        Button9.Location = New Point(414, 675)
+        Button9.Name = "Button9"
+        Button9.Size = New Size(78, 49)
+        Button9.TabIndex = 31
+        Button9.Text = "Opt4"
+        Button9.UseVisualStyleBackColor = True
+        ' 
+        ' Button8
+        ' 
+        Button8.Location = New Point(321, 675)
+        Button8.Name = "Button8"
+        Button8.Size = New Size(78, 49)
+        Button8.TabIndex = 30
+        Button8.Text = "Opt3"
+        Button8.UseVisualStyleBackColor = True
+        ' 
+        ' Button7
+        ' 
+        Button7.Location = New Point(230, 675)
+        Button7.Name = "Button7"
+        Button7.Size = New Size(85, 49)
+        Button7.TabIndex = 29
+        Button7.Text = "Opt2"
+        Button7.UseVisualStyleBackColor = True
+        ' 
+        ' Button6
+        ' 
+        Button6.Location = New Point(135, 675)
+        Button6.Name = "Button6"
+        Button6.Size = New Size(89, 49)
+        Button6.TabIndex = 28
+        Button6.Text = "Opt1"
+        Button6.UseVisualStyleBackColor = True
         ' 
         ' TextBox13
         ' 
@@ -406,7 +450,7 @@ Partial Class Form1
         ' 
         ' TextBox16
         ' 
-        TextBox16.Font = New Font("Segoe UI", 9.857143F)
+        TextBox16.Font = New Font("Segoe UI Black", 9.857143F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         TextBox16.Location = New Point(348, 262)
         TextBox16.Name = "TextBox16"
         TextBox16.Size = New Size(142, 38)
@@ -455,11 +499,11 @@ Partial Class Form1
         ' NumericUpDown8
         ' 
         NumericUpDown8.BackColor = Color.Yellow
-        NumericUpDown8.DecimalPlaces = 1
-        NumericUpDown8.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
+        NumericUpDown8.DecimalPlaces = 2
+        NumericUpDown8.Increment = New Decimal(New Integer() {5, 0, 0, 131072})
         NumericUpDown8.Location = New Point(348, 82)
         NumericUpDown8.Maximum = New Decimal(New Integer() {100000, 0, 0, 0})
-        NumericUpDown8.Minimum = New Decimal(New Integer() {1, 0, 0, 589824})
+        NumericUpDown8.Minimum = New Decimal(New Integer() {1, 0, 0, 327680})
         NumericUpDown8.Name = "NumericUpDown8"
         NumericUpDown8.Size = New Size(142, 38)
         NumericUpDown8.TabIndex = 28
@@ -606,12 +650,13 @@ Partial Class Form1
         ' 
         ' Button2
         ' 
-        Button2.Location = New Point(202, 684)
+        Button2.Location = New Point(34, 678)
         Button2.Name = "Button2"
-        Button2.Size = New Size(153, 42)
+        Button2.Size = New Size(86, 42)
         Button2.TabIndex = 18
         Button2.Text = "Button2"
         Button2.UseVisualStyleBackColor = True
+        Button2.Visible = False
         ' 
         ' PictureBox2
         ' 
@@ -619,7 +664,7 @@ Partial Class Form1
         PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
         PictureBox2.Location = New Point(594, 3)
         PictureBox2.Name = "PictureBox2"
-        PictureBox2.Size = New Size(716, 734)
+        PictureBox2.Size = New Size(716, 733)
         PictureBox2.SizeMode = PictureBoxSizeMode.Zoom
         PictureBox2.TabIndex = 17
         PictureBox2.TabStop = False
@@ -759,10 +804,10 @@ Partial Class Form1
         TabPage4.Controls.Add(GroupBox4)
         TabPage4.Controls.Add(Button4)
         TabPage4.Controls.Add(GroupBox3)
-        TabPage4.Location = New Point(4, 40)
+        TabPage4.Location = New Point(4, 39)
         TabPage4.Name = "TabPage4"
         TabPage4.Padding = New Padding(3)
-        TabPage4.Size = New Size(1313, 739)
+        TabPage4.Size = New Size(1313, 740)
         TabPage4.TabIndex = 3
         TabPage4.Text = "Copper Loss"
         TabPage4.UseVisualStyleBackColor = True
@@ -773,7 +818,7 @@ Partial Class Form1
         PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), Image)
         PictureBox4.Location = New Point(770, 3)
         PictureBox4.Name = "PictureBox4"
-        PictureBox4.Size = New Size(540, 733)
+        PictureBox4.Size = New Size(540, 734)
         PictureBox4.SizeMode = PictureBoxSizeMode.Zoom
         PictureBox4.TabIndex = 28
         PictureBox4.TabStop = False
@@ -1123,5 +1168,9 @@ Partial Class Form1
     Friend WithEvents Label26 As Label
     Friend WithEvents TextBox16 As TextBox
     Friend WithEvents Label27 As Label
+    Friend WithEvents Button6 As Button
+    Friend WithEvents Button7 As Button
+    Friend WithEvents Button8 As Button
+    Friend WithEvents Button9 As Button
 
 End Class

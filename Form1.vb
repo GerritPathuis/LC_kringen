@@ -73,5 +73,35 @@ Public Class Form1
         TextBox15.Text = sb.ToString
     End Sub
 
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        ' For 28 kHz Piezo
+        NumericUpDown7.Value = 4.9        'C[nF]->[F]
+        NumericUpDown8.Value = 0.33       'Cx2[uF]->[F]
+        NumericUpDown5.Value = 96        'L[uH]->[H]
+        NumericUpDown6.Value = 1.0        'R [ohm]
+    End Sub
 
+    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+        ' For 28 kHz Piezo
+        NumericUpDown7.Value = 4.9        'C[nF]->[F]
+        NumericUpDown8.Value = 0.68       'Cx2[uF]->[F]
+        NumericUpDown5.Value = 47.0       'L[uH]->[H]
+        NumericUpDown6.Value = 0.5        'R [ohm]
+    End Sub
+
+    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
+        ' For 28 kHz Piezo
+        NumericUpDown7.Value = 4.9        'C[nF]->[F]
+        NumericUpDown8.Value = 1.5        'Cx2[uF]->[F]
+        NumericUpDown5.Value = 21.4       'L[uH]->[H]
+        NumericUpDown6.Value = 0.5        'R [ohm]
+    End Sub
+
+    Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
+        ' For 28 kHz Piezo
+        NumericUpDown7.Value = 4.9        'C[nF]->[F]
+        NumericUpDown8.Value = 2.2        'Cx2[uF]->[F]
+        NumericUpDown5.Value = 14.7       'L[uH]->[H]
+        NumericUpDown6.Value = 0.5        'R [ohm]
+    End Sub
 End Class
