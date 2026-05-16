@@ -39,29 +39,44 @@ Public Class Form1
         TextBox8.Text = Area.ToString("F2")     '[mm2]
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click, NumericUpDown5.ValueChanged, NumericUpDown6.ValueChanged, NumericUpDown7.ValueChanged, NumericUpDown8.ValueChanged
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click, NumericUpDown5.ValueChanged, NumericUpDown6.ValueChanged, NumericUpDown7.ValueChanged, NumericUpDown8.ValueChanged, NumericUpDown12.ValueChanged
         Dim sb As New StringBuilder
         Dim C = NumericUpDown7.Value / 10 ^ 9           '[nF]->[F]
         Dim Cx2 = NumericUpDown8.Value / 10 ^ 6         '[uF]->[F]
         Dim L = NumericUpDown5.Value / 10 ^ 6           '[uH]->[H]
         Dim R = NumericUpDown6.Value                    '[ohm]
         Dim Ctotal = C + Cx2                            '[F]
+        Dim fact = NumericUpDown12.Value                '[Hz]
 
-        Dim f = 1 / (2 * Math.PI * Math.Sqrt(L * Ctotal)) '[Hz]
-        Dim xl = 2 * Math.PI * f * L                    '[ohm]
-        Dim xc = 1 / (2 * Math.PI * f * Ctotal)         '[ohm]
-        Dim z = Math.Sqrt(R ^ 2 + xl ^ 2 + xc ^ 2)      '[ohm]
-        Dim phase = Math.Atan((xl - xc) / R) * 180 / Math.PI '[degree]
-        Dim q As Double = 0
-        If L > 0 Then q = 1 / (R * Math.Sqrt(Ctotal / L)) '[-]
 
-        TextBox9.Text = (f / 1000).ToString("F1")       '[kHz]
-        TextBox10.Text = xc.ToString("F1")              '[ohm]
-        TextBox11.Text = xl.ToString("F1")              '[ohm]
-        TextBox12.Text = z.ToString("F1")               '[ohm]
-        TextBox14.Text = phase.ToString("F1")           '[degree]
-        TextBox16.Text = q.ToString("F1")           '[-]
+        If L > 0 AndAlso Ctotal > 0 Then
+            Dim omega = 1 / Math.Sqrt(L * Ctotal)           '[rad/s]
+            Dim f = omega / (2 * Math.PI)                   '[Hz]
+            Dim xl = omega * L                              '[ohm]
+            Dim xc = 1 / (omega * Ctotal)                   '[ohm]
+            Dim z = Math.Sqrt(R ^ 2 + xl ^ 2 + xc ^ 2)      '[ohm]
+            Dim phase = Math.Atan((xl - xc) / R) ' * 180 / Math.PI '[degree]
+            Dim q As Double = 0
+            If L > 0 Then q = 1 / (R * Math.Sqrt(Ctotal / L)) '[-]
+            '====== Actual numbers ======
+            Dim xcAct = 1 / (2 * Math.PI * fact * Ctotal)         '[ohm]
+            Dim xlAct = 2 * Math.PI * fact * L                    '[ohm]
+            Dim zAct = Math.Sqrt(R ^ 2 + xlAct ^ 2 + xcAct ^ 2)   '[ohm]
+            Dim phaseAct = Math.Atan((xlAct - xcAct) / R) * 180 / Math.PI '[degree] 
 
+            TextBox17.Text = omega.ToString("F0")           '[rad/s]
+            TextBox9.Text = f.ToString("F0")                '[Hz]
+            TextBox10.Text = xc.ToString("F2")              '[ohm]
+            TextBox11.Text = xl.ToString("F2")              '[ohm]
+            TextBox12.Text = z.ToString("F1")               '[ohm]
+            TextBox14.Text = phase.ToString("F1")           '[degree]
+            TextBox16.Text = q.ToString("F1")               '[-]
+            '====== Actual numbers ======
+            TextBox22.Text = xc.ToString("F2")              '[ohm] actual at fact
+            TextBox21.Text = xl.ToString("F2")              '[ohm] actual at fact
+            TextBox20.Text = zAct.ToString("F1")            '[ohm] actual at fact
+            TextBox18.Text = phaseAct.ToString("F1")        '[degree] actual at fact   
+        End If
         sb.AppendLine("Piezo Capacity 4.9nF @1kHz")
         sb.AppendLine("Piezo series inductor 5.5uH")
         TextBox13.Text = sb.ToString
@@ -77,8 +92,9 @@ Public Class Form1
         ' For 28 kHz Piezo
         NumericUpDown7.Value = 4.9        'C[nF]->[F]
         NumericUpDown8.Value = 0.33       'Cx2[uF]->[F]
-        NumericUpDown5.Value = 96        'L[uH]->[H]
+        NumericUpDown5.Value = 96         'L[uH]->[H]
         NumericUpDown6.Value = 1.0        'R [ohm]
+        NumericUpDown12.Value = 28069     'f [Hz]
     End Sub
 
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
@@ -87,6 +103,7 @@ Public Class Form1
         NumericUpDown8.Value = 0.68       'Cx2[uF]->[F]
         NumericUpDown5.Value = 47.0       'L[uH]->[H]
         NumericUpDown6.Value = 0.5        'R [ohm]
+        NumericUpDown12.Value = 28052     'f [Hz]
     End Sub
 
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
@@ -95,6 +112,7 @@ Public Class Form1
         NumericUpDown8.Value = 1.5        'Cx2[uF]->[F]
         NumericUpDown5.Value = 21.4       'L[uH]->[H]
         NumericUpDown6.Value = 0.5        'R [ohm]
+        NumericUpDown12.Value = 28045     'f [Hz]
     End Sub
 
     Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
@@ -103,5 +121,6 @@ Public Class Form1
         NumericUpDown8.Value = 2.2        'Cx2[uF]->[F]
         NumericUpDown5.Value = 14.7       'L[uH]->[H]
         NumericUpDown6.Value = 0.5        'R [ohm]
+        NumericUpDown12.Value = 27955     'f [Hz]
     End Sub
 End Class
