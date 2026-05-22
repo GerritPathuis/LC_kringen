@@ -43,6 +43,13 @@ Partial Class Form1
         Button1 = New Button()
         Label6 = New Label()
         TabPage2 = New TabPage()
+        GroupBox8 = New GroupBox()
+        NumericUpDown16 = New NumericUpDown()
+        Label36 = New Label()
+        TextBox19 = New TextBox()
+        NumericUpDown15 = New NumericUpDown()
+        Label31 = New Label()
+        Label35 = New Label()
         GroupBox6 = New GroupBox()
         TextBox18 = New TextBox()
         Label30 = New Label()
@@ -109,9 +116,9 @@ Partial Class Form1
         NumericUpDown14 = New NumericUpDown()
         Button4 = New Button()
         GroupBox3 = New GroupBox()
+        Label37 = New Label()
         TextBox6 = New TextBox()
         NumericUpDown11 = New NumericUpDown()
-        Label17 = New Label()
         Label18 = New Label()
         TabPage5 = New TabPage()
         Button5 = New Button()
@@ -127,6 +134,9 @@ Partial Class Form1
         CType(NumericUpDown3, ComponentModel.ISupportInitialize).BeginInit()
         CType(NumericUpDown4, ComponentModel.ISupportInitialize).BeginInit()
         TabPage2.SuspendLayout()
+        GroupBox8.SuspendLayout()
+        CType(NumericUpDown16, ComponentModel.ISupportInitialize).BeginInit()
+        CType(NumericUpDown15, ComponentModel.ISupportInitialize).BeginInit()
         GroupBox6.SuspendLayout()
         CType(NumericUpDown12, ComponentModel.ISupportInitialize).BeginInit()
         GroupBox5.SuspendLayout()
@@ -365,6 +375,7 @@ Partial Class Form1
         ' 
         ' TabPage2
         ' 
+        TabPage2.Controls.Add(GroupBox8)
         TabPage2.Controls.Add(GroupBox6)
         TabPage2.Controls.Add(Button9)
         TabPage2.Controls.Add(Button8)
@@ -379,8 +390,86 @@ Partial Class Form1
         TabPage2.Padding = New Padding(3)
         TabPage2.Size = New Size(1665, 739)
         TabPage2.TabIndex = 1
-        TabPage2.Text = "LC Resonance"
+        TabPage2.Text = "LC Tank"
         TabPage2.UseVisualStyleBackColor = True
+        ' 
+        ' GroupBox8
+        ' 
+        GroupBox8.Controls.Add(NumericUpDown16)
+        GroupBox8.Controls.Add(Label36)
+        GroupBox8.Controls.Add(TextBox19)
+        GroupBox8.Controls.Add(NumericUpDown15)
+        GroupBox8.Controls.Add(Label31)
+        GroupBox8.Controls.Add(Label35)
+        GroupBox8.Location = New Point(555, 23)
+        GroupBox8.Name = "GroupBox8"
+        GroupBox8.Size = New Size(364, 208)
+        GroupBox8.TabIndex = 33
+        GroupBox8.TabStop = False
+        GroupBox8.Text = "Power"
+        ' 
+        ' NumericUpDown16
+        ' 
+        NumericUpDown16.BackColor = Color.Yellow
+        NumericUpDown16.Location = New Point(207, 84)
+        NumericUpDown16.Maximum = New Decimal(New Integer() {3000, 0, 0, 0})
+        NumericUpDown16.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        NumericUpDown16.Name = "NumericUpDown16"
+        NumericUpDown16.Size = New Size(144, 38)
+        NumericUpDown16.TabIndex = 54
+        NumericUpDown16.TextAlign = HorizontalAlignment.Center
+        NumericUpDown16.Value = New Decimal(New Integer() {12, 0, 0, 0})
+        ' 
+        ' Label36
+        ' 
+        Label36.AutoSize = True
+        Label36.Font = New Font("Segoe UI", 9.857143F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label36.Location = New Point(19, 84)
+        Label36.Name = "Label36"
+        Label36.Size = New Size(183, 32)
+        Label36.TabIndex = 53
+        Label36.Text = "Power Volt [Vac]"
+        ' 
+        ' TextBox19
+        ' 
+        TextBox19.Font = New Font("Segoe UI", 9.857143F)
+        TextBox19.Location = New Point(206, 131)
+        TextBox19.Name = "TextBox19"
+        TextBox19.Size = New Size(142, 38)
+        TextBox19.TabIndex = 52
+        TextBox19.TextAlign = HorizontalAlignment.Center
+        ' 
+        ' NumericUpDown15
+        ' 
+        NumericUpDown15.BackColor = Color.Yellow
+        NumericUpDown15.Location = New Point(204, 37)
+        NumericUpDown15.Maximum = New Decimal(New Integer() {3000, 0, 0, 0})
+        NumericUpDown15.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        NumericUpDown15.Name = "NumericUpDown15"
+        NumericUpDown15.Size = New Size(144, 38)
+        NumericUpDown15.TabIndex = 50
+        NumericUpDown15.TextAlign = HorizontalAlignment.Center
+        NumericUpDown15.Value = New Decimal(New Integer() {60, 0, 0, 0})
+        ' 
+        ' Label31
+        ' 
+        Label31.AutoSize = True
+        Label31.Font = New Font("Segoe UI", 9.857143F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label31.Location = New Point(19, 129)
+        Label31.Name = "Label31"
+        Label31.Size = New Size(148, 32)
+        Label31.TabIndex = 51
+        Label31.Text = "Resonant [A]"
+        ' 
+        ' Label35
+        ' 
+        Label35.AutoSize = True
+        Label35.Font = New Font("Segoe UI", 9.857143F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label35.Location = New Point(19, 39)
+        Label35.Name = "Label35"
+        Label35.Size = New Size(121, 32)
+        Label35.TabIndex = 49
+        Label35.Text = "Power [W]"
         ' 
         ' GroupBox6
         ' 
@@ -394,9 +483,9 @@ Partial Class Form1
         GroupBox6.Controls.Add(Label34)
         GroupBox6.Controls.Add(NumericUpDown12)
         GroupBox6.Controls.Add(Label29)
-        GroupBox6.Location = New Point(549, 38)
+        GroupBox6.Location = New Point(555, 275)
         GroupBox6.Name = "GroupBox6"
-        GroupBox6.Size = New Size(385, 513)
+        GroupBox6.Size = New Size(385, 268)
         GroupBox6.TabIndex = 32
         GroupBox6.TabStop = False
         GroupBox6.Text = "Actual numbers"
@@ -404,7 +493,7 @@ Partial Class Form1
         ' TextBox18
         ' 
         TextBox18.Font = New Font("Segoe UI", 9.857143F)
-        TextBox18.Location = New Point(219, 458)
+        TextBox18.Location = New Point(215, 213)
         TextBox18.Name = "TextBox18"
         TextBox18.Size = New Size(142, 38)
         TextBox18.TabIndex = 48
@@ -414,7 +503,7 @@ Partial Class Form1
         ' 
         Label30.AutoSize = True
         Label30.Font = New Font("Segoe UI", 9.857143F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label30.Location = New Point(22, 455)
+        Label30.Location = New Point(18, 210)
         Label30.Name = "Label30"
         Label30.Size = New Size(172, 32)
         Label30.TabIndex = 47
@@ -423,7 +512,7 @@ Partial Class Form1
         ' TextBox20
         ' 
         TextBox20.Font = New Font("Segoe UI", 9.857143F)
-        TextBox20.Location = New Point(219, 414)
+        TextBox20.Location = New Point(215, 169)
         TextBox20.Name = "TextBox20"
         TextBox20.Size = New Size(142, 38)
         TextBox20.TabIndex = 46
@@ -433,7 +522,7 @@ Partial Class Form1
         ' 
         Label32.AutoSize = True
         Label32.Font = New Font("Segoe UI", 9.857143F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label32.Location = New Point(22, 411)
+        Label32.Location = New Point(18, 166)
         Label32.Name = "Label32"
         Label32.Size = New Size(98, 32)
         Label32.TabIndex = 45
@@ -442,7 +531,7 @@ Partial Class Form1
         ' TextBox21
         ' 
         TextBox21.Font = New Font("Segoe UI", 9.857143F)
-        TextBox21.Location = New Point(219, 370)
+        TextBox21.Location = New Point(215, 125)
         TextBox21.Name = "TextBox21"
         TextBox21.Size = New Size(142, 38)
         TextBox21.TabIndex = 44
@@ -452,7 +541,7 @@ Partial Class Form1
         ' 
         Label33.AutoSize = True
         Label33.Font = New Font("Segoe UI", 9.857143F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label33.Location = New Point(22, 367)
+        Label33.Location = New Point(18, 122)
         Label33.Name = "Label33"
         Label33.Size = New Size(109, 32)
         Label33.TabIndex = 42
@@ -461,7 +550,7 @@ Partial Class Form1
         ' TextBox22
         ' 
         TextBox22.Font = New Font("Segoe UI", 9.857143F)
-        TextBox22.Location = New Point(219, 326)
+        TextBox22.Location = New Point(215, 81)
         TextBox22.Name = "TextBox22"
         TextBox22.Size = New Size(142, 38)
         TextBox22.TabIndex = 40
@@ -471,7 +560,7 @@ Partial Class Form1
         ' 
         Label34.AutoSize = True
         Label34.Font = New Font("Segoe UI", 9.857143F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label34.Location = New Point(22, 323)
+        Label34.Location = New Point(18, 78)
         Label34.Name = "Label34"
         Label34.Size = New Size(109, 32)
         Label34.TabIndex = 39
@@ -481,7 +570,7 @@ Partial Class Form1
         ' 
         NumericUpDown12.BackColor = Color.Yellow
         NumericUpDown12.Increment = New Decimal(New Integer() {10, 0, 0, 0})
-        NumericUpDown12.Location = New Point(217, 235)
+        NumericUpDown12.Location = New Point(213, 37)
         NumericUpDown12.Maximum = New Decimal(New Integer() {1000000, 0, 0, 0})
         NumericUpDown12.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         NumericUpDown12.Name = "NumericUpDown12"
@@ -494,7 +583,7 @@ Partial Class Form1
         ' 
         Label29.AutoSize = True
         Label29.Font = New Font("Segoe UI", 9.857143F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label29.Location = New Point(23, 237)
+        Label29.Location = New Point(19, 39)
         Label29.Name = "Label29"
         Label29.Size = New Size(186, 32)
         Label29.TabIndex = 37
@@ -991,7 +1080,7 @@ Partial Class Form1
         GroupBox4.Controls.Add(NumericUpDown14)
         GroupBox4.Location = New Point(67, 43)
         GroupBox4.Name = "GroupBox4"
-        GroupBox4.Size = New Size(572, 257)
+        GroupBox4.Size = New Size(521, 246)
         GroupBox4.TabIndex = 27
         GroupBox4.TabStop = False
         GroupBox4.Text = "Copper Wire resistance"
@@ -1027,6 +1116,7 @@ Partial Class Form1
         ' 
         ' NumericUpDown13
         ' 
+        NumericUpDown13.BackColor = Color.Yellow
         NumericUpDown13.DecimalPlaces = 2
         NumericUpDown13.Font = New Font("Segoe UI", 9.857143F)
         NumericUpDown13.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
@@ -1069,6 +1159,7 @@ Partial Class Form1
         ' 
         ' NumericUpDown14
         ' 
+        NumericUpDown14.BackColor = Color.Yellow
         NumericUpDown14.DecimalPlaces = 2
         NumericUpDown14.Font = New Font("Segoe UI", 9.857143F)
         NumericUpDown14.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
@@ -1092,21 +1183,31 @@ Partial Class Form1
         ' 
         ' GroupBox3
         ' 
+        GroupBox3.Controls.Add(Label37)
         GroupBox3.Controls.Add(TextBox6)
         GroupBox3.Controls.Add(NumericUpDown11)
-        GroupBox3.Controls.Add(Label17)
         GroupBox3.Controls.Add(Label18)
         GroupBox3.Location = New Point(67, 339)
         GroupBox3.Name = "GroupBox3"
-        GroupBox3.Size = New Size(572, 150)
+        GroupBox3.Size = New Size(521, 195)
         GroupBox3.TabIndex = 26
         GroupBox3.TabStop = False
         GroupBox3.Text = "Inductor Power Consumption"
         ' 
+        ' Label37
+        ' 
+        Label37.AutoSize = True
+        Label37.Font = New Font("Segoe UI", 9.857143F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label37.Location = New Point(13, 39)
+        Label37.Name = "Label37"
+        Label37.Size = New Size(121, 32)
+        Label37.TabIndex = 27
+        Label37.Text = "Current [I]"
+        ' 
         ' TextBox6
         ' 
         TextBox6.Font = New Font("Segoe UI", 9.857143F)
-        TextBox6.Location = New Point(351, 84)
+        TextBox6.Location = New Point(351, 81)
         TextBox6.Name = "TextBox6"
         TextBox6.Size = New Size(142, 38)
         TextBox6.TabIndex = 25
@@ -1114,10 +1215,11 @@ Partial Class Form1
         ' 
         ' NumericUpDown11
         ' 
+        NumericUpDown11.BackColor = Color.Yellow
         NumericUpDown11.DecimalPlaces = 1
         NumericUpDown11.Font = New Font("Segoe UI", 9.857143F)
         NumericUpDown11.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
-        NumericUpDown11.Location = New Point(350, 43)
+        NumericUpDown11.Location = New Point(350, 37)
         NumericUpDown11.Minimum = New Decimal(New Integer() {1, 0, 0, 65536})
         NumericUpDown11.Name = "NumericUpDown11"
         NumericUpDown11.Size = New Size(143, 38)
@@ -1125,25 +1227,15 @@ Partial Class Form1
         NumericUpDown11.TextAlign = HorizontalAlignment.Center
         NumericUpDown11.Value = New Decimal(New Integer() {5, 0, 0, 0})
         ' 
-        ' Label17
-        ' 
-        Label17.AutoSize = True
-        Label17.Font = New Font("Segoe UI", 9.857143F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label17.Location = New Point(13, 44)
-        Label17.Name = "Label17"
-        Label17.Size = New Size(130, 32)
-        Label17.TabIndex = 23
-        Label17.Text = "Current [A]"
-        ' 
         ' Label18
         ' 
         Label18.AutoSize = True
         Label18.Font = New Font("Segoe UI", 9.857143F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label18.Location = New Point(13, 95)
+        Label18.Location = New Point(13, 89)
         Label18.Name = "Label18"
-        Label18.Size = New Size(121, 32)
+        Label18.Size = New Size(168, 32)
         Label18.TabIndex = 19
-        Label18.Text = "Power [W]"
+        Label18.Text = "Power loss [W]"
         ' 
         ' TabPage5
         ' 
@@ -1216,6 +1308,10 @@ Partial Class Form1
         CType(NumericUpDown4, ComponentModel.ISupportInitialize).EndInit()
         TabPage2.ResumeLayout(False)
         TabPage2.PerformLayout()
+        GroupBox8.ResumeLayout(False)
+        GroupBox8.PerformLayout()
+        CType(NumericUpDown16, ComponentModel.ISupportInitialize).EndInit()
+        CType(NumericUpDown15, ComponentModel.ISupportInitialize).EndInit()
         GroupBox6.ResumeLayout(False)
         GroupBox6.PerformLayout()
         CType(NumericUpDown12, ComponentModel.ISupportInitialize).EndInit()
@@ -1295,7 +1391,6 @@ Partial Class Form1
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents TextBox6 As TextBox
     Friend WithEvents NumericUpDown11 As NumericUpDown
-    Friend WithEvents Label17 As Label
     Friend WithEvents Label18 As Label
     Friend WithEvents GroupBox4 As GroupBox
     Friend WithEvents TextBox7 As TextBox
@@ -1344,5 +1439,13 @@ Partial Class Form1
     Friend WithEvents Label34 As Label
     Friend WithEvents NumericUpDown12 As NumericUpDown
     Friend WithEvents Label29 As Label
+    Friend WithEvents GroupBox8 As GroupBox
+    Friend WithEvents NumericUpDown16 As NumericUpDown
+    Friend WithEvents Label36 As Label
+    Friend WithEvents TextBox19 As TextBox
+    Friend WithEvents NumericUpDown15 As NumericUpDown
+    Friend WithEvents Label31 As Label
+    Friend WithEvents Label35 As Label
+    Friend WithEvents Label37 As Label
 
 End Class

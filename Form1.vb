@@ -1,5 +1,6 @@
 ﻿Imports System.Text
 
+
 Public Class Form1
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click, TabPage1.Enter, NumericUpDown1.ValueChanged, NumericUpDown4.ValueChanged, NumericUpDown3.ValueChanged, NumericUpDown2.ValueChanged
         Dim I As Double = NumericUpDown2.Value      '[A]    
@@ -26,20 +27,21 @@ Public Class Form1
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click, NumericUpDown11.ValueChanged, NumericUpDown14.ValueChanged, NumericUpDown13.ValueChanged
-        Dim I = NumericUpDown11.Value           '[A]    
-        Dim Diam = NumericUpDown14.Value        '[mm]    
-        Dim Length = NumericUpDown13.Value      '[m]    
-        Dim Area = Math.PI / 4 * Diam ^ 2       '[mm2]
+        Dim I = NumericUpDown11.Value           '[A] current through the wire   
+        Dim Diam = NumericUpDown14.Value        '[mm] wire diameter   
+        Dim Length = NumericUpDown13.Value      '[m] wire length 
+        Dim Area = Math.PI / 4 * Diam ^ 2       '[mm2] wire cross-sectional area
         Dim ro = 0.01724                        '[ohm*m] for copper
 
         Dim R = ro * Length / Area              '[ohm]
-        Dim pow = I * I * R                     '[W]
-        TextBox6.Text = pow.ToString("F1")      '[W]
-        TextBox7.Text = R.ToString("F3")        '[ohm]
-        TextBox8.Text = Area.ToString("F2")     '[mm2]
+        Dim powLoss = I * I * R                 '[W] power loss in the wire
+
+        TextBox6.Text = powLoss.ToString("F1")  '[W] power loss in the wire
+        TextBox7.Text = R.ToString("F3")        '[ohm] wire resistance
+        TextBox8.Text = Area.ToString("F2")     '[mm2] cross section area of the wire
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click, NumericUpDown5.ValueChanged, NumericUpDown6.ValueChanged, NumericUpDown7.ValueChanged, NumericUpDown8.ValueChanged, NumericUpDown12.ValueChanged
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click, NumericUpDown5.ValueChanged, NumericUpDown6.ValueChanged, NumericUpDown7.ValueChanged, NumericUpDown8.ValueChanged, NumericUpDown12.ValueChanged, NumericUpDown16.ValueChanged, NumericUpDown15.ValueChanged
         Dim sb As New StringBuilder
         Dim C = NumericUpDown7.Value / 10 ^ 9           '[nF]->[F]
         Dim Cx2 = NumericUpDown8.Value / 10 ^ 6         '[uF]->[F]
@@ -47,7 +49,8 @@ Public Class Form1
         Dim R = NumericUpDown6.Value                    '[ohm]
         Dim Ctotal = C + Cx2                            '[F]
         Dim fact = NumericUpDown12.Value                '[Hz]
-
+        Dim Pow = NumericUpDown15.Value                 '[W]
+        Dim vac = NumericUpDown16.Value                 '[V]
 
         If L > 0 AndAlso Ctotal > 0 Then
             Dim omega = 1 / Math.Sqrt(L * Ctotal)           '[rad/s]
@@ -63,6 +66,8 @@ Public Class Form1
             Dim xlAct = 2 * Math.PI * fact * L                    '[ohm]
             Dim zAct = Math.Sqrt(R ^ 2 + xlAct ^ 2 + xcAct ^ 2)   '[ohm]
             Dim phaseAct = Math.Atan((xlAct - xcAct) / R) * 180 / Math.PI '[degree] 
+            '====== Power, Current ======
+            Dim iResonant = 2 * Math.PI * Pow / (vac * Math.Sqrt(2))  '[A]
 
             TextBox17.Text = omega.ToString("F0")           '[rad/s]
             TextBox9.Text = f.ToString("F0")                '[Hz]
@@ -76,6 +81,9 @@ Public Class Form1
             TextBox21.Text = xl.ToString("F2")              '[ohm] actual at fact
             TextBox20.Text = zAct.ToString("F1")            '[ohm] actual at fact
             TextBox18.Text = phaseAct.ToString("F1")        '[degree] actual at fact   
+            '====== Actual numbers ======
+            TextBox19.Text = iResonant.ToString("F1")       '[A] resonant current at given power and voltage
+
         End If
         sb.AppendLine("Piezo Capacity 4.9nF @1kHz")
         sb.AppendLine("Piezo series inductor 5.5uH")
