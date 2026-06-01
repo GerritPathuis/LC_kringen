@@ -108,10 +108,10 @@ Public Class Form1
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
         ' For 28 kHz Piezo
         NumericUpDown7.Value = 4.9        'C[nF]->[F]
-        NumericUpDown8.Value = 0.68       'Cx2[uF]->[F]
-        NumericUpDown5.Value = 47.0       'L[uH]->[H]
-        NumericUpDown6.Value = 0.5        'R [ohm]
-        NumericUpDown12.Value = 28052     'f [Hz]
+        NumericUpDown8.Value = 0.692      'Cx2[uF]->[F]
+        NumericUpDown5.Value = 34.0       'L[uH]->[H]
+        NumericUpDown6.Value = 0.08       'R [ohm]
+        NumericUpDown12.Value = 32696     'f [Hz]
     End Sub
 
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click

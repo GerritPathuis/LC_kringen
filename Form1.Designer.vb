@@ -745,7 +745,7 @@ Partial Class Form1
         ' 
         NumericUpDown8.BackColor = Color.Yellow
         NumericUpDown8.DecimalPlaces = 2
-        NumericUpDown8.Increment = New Decimal(New Integer() {5, 0, 0, 131072})
+        NumericUpDown8.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
         NumericUpDown8.Location = New Point(348, 81)
         NumericUpDown8.Maximum = New Decimal(New Integer() {100000, 0, 0, 0})
         NumericUpDown8.Minimum = New Decimal(New Integer() {1, 0, 0, 327680})
@@ -848,8 +848,8 @@ Partial Class Form1
         ' NumericUpDown6
         ' 
         NumericUpDown6.BackColor = Color.Yellow
-        NumericUpDown6.DecimalPlaces = 1
-        NumericUpDown6.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
+        NumericUpDown6.DecimalPlaces = 2
+        NumericUpDown6.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
         NumericUpDown6.Location = New Point(348, 169)
         NumericUpDown6.Maximum = New Decimal(New Integer() {100000, 0, 0, 0})
         NumericUpDown6.Minimum = New Decimal(New Integer() {1, 0, 0, 589824})
@@ -857,7 +857,7 @@ Partial Class Form1
         NumericUpDown6.Size = New Size(142, 38)
         NumericUpDown6.TabIndex = 14
         NumericUpDown6.TextAlign = HorizontalAlignment.Center
-        NumericUpDown6.Value = New Decimal(New Integer() {1, 0, 0, 65536})
+        NumericUpDown6.Value = New Decimal(New Integer() {8, 0, 0, 131072})
         ' 
         ' Label7
         ' 
