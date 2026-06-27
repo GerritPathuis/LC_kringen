@@ -163,9 +163,7 @@ Partial Class Form1
         TabPage7 = New TabPage()
         TextBox44 = New TextBox()
         GroupBox16 = New GroupBox()
-        TextBox38 = New TextBox()
         TextBox39 = New TextBox()
-        Label59 = New Label()
         Label58 = New Label()
         PictureBox6 = New PictureBox()
         GroupBox14 = New GroupBox()
@@ -208,6 +206,18 @@ Partial Class Form1
         NumericUpDown30 = New NumericUpDown()
         Label64 = New Label()
         Label65 = New Label()
+        TabPage9 = New TabPage()
+        Button13 = New Button()
+        Label9 = New Label()
+        GroupBox21 = New GroupBox()
+        Label74 = New Label()
+        TextBox51 = New TextBox()
+        Label73 = New Label()
+        TextBox38 = New TextBox()
+        NumericUpDown7 = New NumericUpDown()
+        NumericUpDown27 = New NumericUpDown()
+        Label59 = New Label()
+        Label72 = New Label()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         CType(NumericUpDown2, ComponentModel.ISupportInitialize).BeginInit()
         TabControl1.SuspendLayout()
@@ -271,6 +281,10 @@ Partial Class Form1
         GroupBox18.SuspendLayout()
         CType(NumericUpDown28, ComponentModel.ISupportInitialize).BeginInit()
         CType(NumericUpDown30, ComponentModel.ISupportInitialize).BeginInit()
+        TabPage9.SuspendLayout()
+        GroupBox21.SuspendLayout()
+        CType(NumericUpDown7, ComponentModel.ISupportInitialize).BeginInit()
+        CType(NumericUpDown27, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' PictureBox1
@@ -326,6 +340,7 @@ Partial Class Form1
         TabControl1.Controls.Add(TabPage6)
         TabControl1.Controls.Add(TabPage7)
         TabControl1.Controls.Add(TabPage8)
+        TabControl1.Controls.Add(TabPage9)
         TabControl1.Dock = DockStyle.Fill
         TabControl1.Location = New Point(0, 0)
         TabControl1.Name = "TabControl1"
@@ -1118,10 +1133,10 @@ Partial Class Form1
         TabPage3.Controls.Add(Label15)
         TabPage3.Controls.Add(Button3)
         TabPage3.Controls.Add(GroupBox2)
-        TabPage3.Location = New Point(4, 40)
+        TabPage3.Location = New Point(4, 39)
         TabPage3.Name = "TabPage3"
         TabPage3.Padding = New Padding(3)
-        TabPage3.Size = New Size(1665, 760)
+        TabPage3.Size = New Size(1665, 761)
         TabPage3.TabIndex = 2
         TabPage3.Text = "LC filters"
         TabPage3.UseVisualStyleBackColor = True
@@ -1817,49 +1832,28 @@ Partial Class Form1
         ' 
         ' GroupBox16
         ' 
-        GroupBox16.Controls.Add(TextBox38)
         GroupBox16.Controls.Add(TextBox39)
-        GroupBox16.Controls.Add(Label59)
         GroupBox16.Controls.Add(Label58)
         GroupBox16.Location = New Point(50, 305)
         GroupBox16.Name = "GroupBox16"
-        GroupBox16.Size = New Size(504, 134)
+        GroupBox16.Size = New Size(504, 93)
         GroupBox16.TabIndex = 41
         GroupBox16.TabStop = False
         GroupBox16.Text = "Network"
         ' 
-        ' TextBox38
-        ' 
-        TextBox38.Location = New Point(352, 35)
-        TextBox38.Name = "TextBox38"
-        TextBox38.Size = New Size(131, 38)
-        TextBox38.TabIndex = 39
-        TextBox38.Text = " "
-        TextBox38.TextAlign = HorizontalAlignment.Center
-        ' 
         ' TextBox39
         ' 
-        TextBox39.Location = New Point(352, 79)
+        TextBox39.Location = New Point(352, 37)
         TextBox39.Name = "TextBox39"
         TextBox39.Size = New Size(131, 38)
         TextBox39.TabIndex = 37
         TextBox39.TextAlign = HorizontalAlignment.Center
         ' 
-        ' Label59
-        ' 
-        Label59.AutoSize = True
-        Label59.Font = New Font("Segoe UI", 9.857143F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label59.Location = New Point(35, 35)
-        Label59.Name = "Label59"
-        Label59.Size = New Size(86, 32)
-        Label59.TabIndex = 32
-        Label59.Text = "QEL [-]"
-        ' 
         ' Label58
         ' 
         Label58.AutoSize = True
         Label58.Font = New Font("Segoe UI", 9.857143F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label58.Location = New Point(35, 79)
+        Label58.Location = New Point(35, 38)
         Label58.Name = "Label58"
         Label58.Size = New Size(247, 32)
         Label58.TabIndex = 34
@@ -1881,12 +1875,12 @@ Partial Class Form1
         GroupBox14.Controls.Add(TextBox41)
         GroupBox14.Controls.Add(Label54)
         GroupBox14.Controls.Add(Label55)
-        GroupBox14.Location = New Point(50, 454)
+        GroupBox14.Location = New Point(50, 409)
         GroupBox14.Name = "GroupBox14"
         GroupBox14.Size = New Size(504, 124)
         GroupBox14.TabIndex = 39
         GroupBox14.TabStop = False
-        GroupBox14.Text = "Parallel L/Series C, High pass"
+        GroupBox14.Text = "High pass"
         ' 
         ' TextBox40
         ' 
@@ -1912,9 +1906,9 @@ Partial Class Form1
         Label54.Font = New Font("Segoe UI", 9.857143F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Label54.Location = New Point(30, 75)
         Label54.Name = "Label54"
-        Label54.Size = New Size(136, 32)
+        Label54.Size = New Size(143, 32)
         Label54.TabIndex = 38
-        Label54.Text = "Cseries [uF]"
+        Label54.Text = "C series [uF]"
         ' 
         ' Label55
         ' 
@@ -1922,9 +1916,9 @@ Partial Class Form1
         Label55.Font = New Font("Segoe UI", 9.857143F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Label55.Location = New Point(30, 36)
         Label55.Name = "Label55"
-        Label55.Size = New Size(154, 32)
+        Label55.Size = New Size(161, 32)
         Label55.TabIndex = 36
-        Label55.Text = "Lparallel [uH]"
+        Label55.Text = "L parallel [uH]"
         ' 
         ' GroupBox15
         ' 
@@ -1932,12 +1926,12 @@ Partial Class Form1
         GroupBox15.Controls.Add(TextBox42)
         GroupBox15.Controls.Add(Label56)
         GroupBox15.Controls.Add(Label57)
-        GroupBox15.Location = New Point(50, 584)
+        GroupBox15.Location = New Point(50, 539)
         GroupBox15.Name = "GroupBox15"
         GroupBox15.Size = New Size(504, 131)
         GroupBox15.TabIndex = 38
         GroupBox15.TabStop = False
-        GroupBox15.Text = "Parallel C/Series L, Low pass"
+        GroupBox15.Text = "Low pass"
         ' 
         ' TextBox43
         ' 
@@ -1961,9 +1955,9 @@ Partial Class Form1
         Label56.Font = New Font("Segoe UI", 9.857143F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Label56.Location = New Point(19, 89)
         Label56.Name = "Label56"
-        Label56.Size = New Size(137, 32)
+        Label56.Size = New Size(144, 32)
         Label56.TabIndex = 42
-        Label56.Text = "Lseries [uH]"
+        Label56.Text = "L series [uH]"
         ' 
         ' Label57
         ' 
@@ -1971,9 +1965,9 @@ Partial Class Form1
         Label57.Font = New Font("Segoe UI", 9.857143F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Label57.Location = New Point(19, 45)
         Label57.Name = "Label57"
-        Label57.Size = New Size(153, 32)
+        Label57.Size = New Size(160, 32)
         Label57.TabIndex = 40
-        Label57.Text = "Cparallel [uF]"
+        Label57.Text = "C parallel [uF]"
         ' 
         ' GroupBox17
         ' 
@@ -2304,6 +2298,140 @@ Partial Class Form1
         Label65.TabIndex = 26
         Label65.Text = "Inductance Primary Coil [uH]"
         ' 
+        ' TabPage9
+        ' 
+        TabPage9.Controls.Add(Button13)
+        TabPage9.Controls.Add(Label9)
+        TabPage9.Controls.Add(GroupBox21)
+        TabPage9.Location = New Point(4, 40)
+        TabPage9.Name = "TabPage9"
+        TabPage9.Padding = New Padding(3)
+        TabPage9.Size = New Size(1665, 760)
+        TabPage9.TabIndex = 8
+        TabPage9.Text = "Power PIEZO"
+        TabPage9.UseVisualStyleBackColor = True
+        ' 
+        ' Button13
+        ' 
+        Button13.Location = New Point(947, 425)
+        Button13.Name = "Button13"
+        Button13.Size = New Size(212, 65)
+        Button13.TabIndex = 41
+        Button13.Text = "Button13"
+        Button13.UseVisualStyleBackColor = True
+        ' 
+        ' Label9
+        ' 
+        Label9.AutoSize = True
+        Label9.Font = New Font("Segoe UI Black", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label9.Location = New Point(57, 95)
+        Label9.Name = "Label9"
+        Label9.Size = New Size(387, 38)
+        Label9.TabIndex = 40
+        Label9.Text = "Power consumption PIEZO"
+        ' 
+        ' GroupBox21
+        ' 
+        GroupBox21.Controls.Add(Label74)
+        GroupBox21.Controls.Add(TextBox51)
+        GroupBox21.Controls.Add(Label73)
+        GroupBox21.Controls.Add(TextBox38)
+        GroupBox21.Controls.Add(NumericUpDown7)
+        GroupBox21.Controls.Add(NumericUpDown27)
+        GroupBox21.Controls.Add(Label59)
+        GroupBox21.Controls.Add(Label72)
+        GroupBox21.Location = New Point(57, 157)
+        GroupBox21.Name = "GroupBox21"
+        GroupBox21.Size = New Size(504, 231)
+        GroupBox21.TabIndex = 39
+        GroupBox21.TabStop = False
+        GroupBox21.Text = "Power consumption PIEZO"
+        ' 
+        ' Label74
+        ' 
+        Label74.AutoSize = True
+        Label74.Font = New Font("Segoe UI", 9.857143F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label74.Location = New Point(19, 171)
+        Label74.Name = "Label74"
+        Label74.Size = New Size(268, 32)
+        Label74.TabIndex = 45
+        Label74.Text = "Power consumption [W]"
+        ' 
+        ' TextBox51
+        ' 
+        TextBox51.Location = New Point(352, 171)
+        TextBox51.Name = "TextBox51"
+        TextBox51.Size = New Size(131, 38)
+        TextBox51.TabIndex = 44
+        TextBox51.Text = " "
+        TextBox51.TextAlign = HorizontalAlignment.Center
+        ' 
+        ' Label73
+        ' 
+        Label73.AutoSize = True
+        Label73.Font = New Font("Segoe UI", 9.857143F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label73.Location = New Point(19, 83)
+        Label73.Name = "Label73"
+        Label73.Size = New Size(185, 32)
+        Label73.TabIndex = 43
+        Label73.Text = "RMS voltage [V]"
+        ' 
+        ' TextBox38
+        ' 
+        TextBox38.Location = New Point(352, 83)
+        TextBox38.Name = "TextBox38"
+        TextBox38.Size = New Size(131, 38)
+        TextBox38.TabIndex = 42
+        TextBox38.Text = " "
+        TextBox38.TextAlign = HorizontalAlignment.Center
+        ' 
+        ' NumericUpDown7
+        ' 
+        NumericUpDown7.BackColor = Color.Yellow
+        NumericUpDown7.Font = New Font("Segoe UI", 9.857143F)
+        NumericUpDown7.Increment = New Decimal(New Integer() {10, 0, 0, 0})
+        NumericUpDown7.Location = New Point(352, 127)
+        NumericUpDown7.Maximum = New Decimal(New Integer() {1000, 0, 0, 0})
+        NumericUpDown7.Name = "NumericUpDown7"
+        NumericUpDown7.Size = New Size(131, 38)
+        NumericUpDown7.TabIndex = 38
+        NumericUpDown7.TextAlign = HorizontalAlignment.Center
+        NumericUpDown7.Value = New Decimal(New Integer() {200, 0, 0, 0})
+        ' 
+        ' NumericUpDown27
+        ' 
+        NumericUpDown27.BackColor = Color.Yellow
+        NumericUpDown27.Font = New Font("Segoe UI", 9.857143F)
+        NumericUpDown27.Increment = New Decimal(New Integer() {10, 0, 0, 0})
+        NumericUpDown27.Location = New Point(352, 39)
+        NumericUpDown27.Maximum = New Decimal(New Integer() {1000, 0, 0, 0})
+        NumericUpDown27.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        NumericUpDown27.Name = "NumericUpDown27"
+        NumericUpDown27.Size = New Size(131, 38)
+        NumericUpDown27.TabIndex = 37
+        NumericUpDown27.TextAlign = HorizontalAlignment.Center
+        NumericUpDown27.Value = New Decimal(New Integer() {300, 0, 0, 0})
+        ' 
+        ' Label59
+        ' 
+        Label59.AutoSize = True
+        Label59.Font = New Font("Segoe UI", 9.857143F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label59.Location = New Point(15, 39)
+        Label59.Name = "Label59"
+        Label59.Size = New Size(222, 32)
+        Label59.TabIndex = 28
+        Label59.Text = "Peak-Peak Volt [V]"
+        ' 
+        ' Label72
+        ' 
+        Label72.AutoSize = True
+        Label72.Font = New Font("Segoe UI", 9.857143F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label72.Location = New Point(19, 127)
+        Label72.Name = "Label72"
+        Label72.Size = New Size(198, 32)
+        Label72.TabIndex = 26
+        Label72.Text = "Resistance [Ohm]"
+        ' 
         ' Form1
         ' 
         AutoScaleDimensions = New SizeF(13F, 31F)
@@ -2400,6 +2528,12 @@ Partial Class Form1
         GroupBox18.PerformLayout()
         CType(NumericUpDown28, ComponentModel.ISupportInitialize).EndInit()
         CType(NumericUpDown30, ComponentModel.ISupportInitialize).EndInit()
+        TabPage9.ResumeLayout(False)
+        TabPage9.PerformLayout()
+        GroupBox21.ResumeLayout(False)
+        GroupBox21.PerformLayout()
+        CType(NumericUpDown7, ComponentModel.ISupportInitialize).EndInit()
+        CType(NumericUpDown27, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
 
@@ -2553,7 +2687,6 @@ Partial Class Form1
     Friend WithEvents TabPage7 As TabPage
     Friend WithEvents PictureBox6 As PictureBox
     Friend WithEvents GroupBox14 As GroupBox
-    Friend WithEvents TextBox38 As TextBox
     Friend WithEvents TextBox39 As TextBox
     Friend WithEvents Label54 As Label
     Friend WithEvents Label55 As Label
@@ -2564,7 +2697,6 @@ Partial Class Form1
     Friend WithEvents Label57 As Label
     Friend WithEvents GroupBox17 As GroupBox
     Friend WithEvents Label58 As Label
-    Friend WithEvents Label59 As Label
     Friend WithEvents Label61 As Label
     Friend WithEvents Label62 As Label
     Friend WithEvents Button11 As Button
@@ -2600,5 +2732,17 @@ Partial Class Form1
     Friend WithEvents Label71 As Label
     Friend WithEvents GroupBox20 As GroupBox
     Friend WithEvents PictureBox8 As PictureBox
+    Friend WithEvents TabPage9 As TabPage
+    Friend WithEvents Label9 As Label
+    Friend WithEvents GroupBox21 As GroupBox
+    Friend WithEvents Label74 As Label
+    Friend WithEvents TextBox51 As TextBox
+    Friend WithEvents Label73 As Label
+    Friend WithEvents TextBox38 As TextBox
+    Friend WithEvents NumericUpDown7 As NumericUpDown
+    Friend WithEvents NumericUpDown27 As NumericUpDown
+    Friend WithEvents Label59 As Label
+    Friend WithEvents Label72 As Label
+    Friend WithEvents Button13 As Button
 
 End Class

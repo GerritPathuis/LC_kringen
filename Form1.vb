@@ -145,7 +145,7 @@ Public Class Form1
         TextBox27.Text = sb.ToString
 
         sb.Clear()
-        sb.AppendLine("Zs, Zp")
+        sb.AppendLine("Z serie, Z parallel")
         sb.AppendLine("One is L and one is C")
         sb.AppendLine("The paralles sits at Rmax")
         sb.AppendLine("Impedance Piezo Cleaning element is 20-40 ohm at resonance upto 200 when mounted and loaded")
@@ -211,27 +211,37 @@ Public Class Form1
         Dim R1 = NumericUpDown26.Value              '[ohm]
         Dim R2 = NumericUpDown29.Value              '[ohm]
 
-
         If f > 0 AndAlso R1 > 0 AndAlso R2 > 0 Then
+            Dim R_low As Double = Math.Min(R1, R2)
+            Dim R_high As Double = Math.Max(R1, R2)
 
-            Dim Rmin As Double = Math.Min(R1, R2)
-            Dim Rmax As Double = Math.Max(R1, R2)
+            'Dim omg = 2 * Math.PI * f                   '[rad/s]
+            'Dim QEL = Math.Sqrt(Rmax / Rmin - 1)
+            'Dim Q = QEL / 2                             'Network
+            ''L-Parallel and C-series
+            'Dim Lp = (Rmax / omg) * QEL * 10 ^ 6        '[uH]
+            'Dim Cs = 1 / (omg * QEL * Rmin) * 10 ^ 6    '[uF]
+            '' C-series and L-Parallel
+            'Dim Cp = QEL / (omg * Rmax) * 10 ^ 6        '[uF]
+            'Dim Ls = (QEL * Rmin) / omg * 10 ^ 6        '[uH]
+
 
             Dim omg = 2 * Math.PI * f                   '[rad/s]
-            Dim QEL = Math.Sqrt(Rmax / Rmin - 1)
-            Dim Q = QEL / 2                             'Network
-            'L-Parallel and C-series
-            Dim Lp = (Rmax / omg) * QEL * 10 ^ 6        '[uH]
-            Dim Cs = 1 / (omg * QEL * Rmin) * 10 ^ 6    '[uF]
-            ' C-series and L-Parallel
-            Dim Cp = QEL / (omg * Rmax) * 10 ^ 6        '[uF]
-            Dim Ls = (QEL * Rmin) / omg * 10 ^ 6        '[uH]
+            Dim Q = (R_high / R_low) - 1
+            Dim Xs = Q * R_low
+            Dim Xp = R_high / Q
 
-            TextBox49.Text = Rmax.ToString      '[ohm]
-            TextBox50.Text = Rmin.ToString      '[ohm]
+            Dim Ls = Xs / omg * 10 ^ 6          '[uH] series
+            Dim Lp = Xp / omg * 10 ^ 6          '[uH] parallel
 
-            TextBox38.Text = QEL.ToString("F3") '[-]
-            TextBox39.Text = Q.ToString("F3")   '[-]
+            Dim Cs = 1 / (omg * Xs) * 10 ^ 6    '[uC] series
+            Dim Cp = 1 / (omg * Xp) * 10 ^ 6    '[uC] parallel
+
+
+            TextBox49.Text = R_high.ToString     '[ohm]
+            TextBox50.Text = R_low.ToString      '[ohm]
+
+            TextBox39.Text = Q.ToString("F3")    '[-]
 
             TextBox40.Text = (Lp).ToString("F1") '[uH] parallel
             TextBox41.Text = (Cs).ToString("F3") '[uF] series
@@ -249,5 +259,15 @@ Public Class Form1
         TextBox45.Text = (c * 10 ^ 12).ToString("F0")       '[pF] series
         TextBox46.Text = (c * 10 ^ 9).ToString("F1")        '[nF] series
         TextBox47.Text = (c * 10 ^ 6).ToString("F2")        '[uF] series
+    End Sub
+
+    Private Sub Button13_Click(sender As Object, e As EventArgs) Handles Button13.Click, NumericUpDown27.ValueChanged, NumericUpDown7.ValueChanged
+        Dim Vpp = NumericUpDown27.Value             '[V]
+        Dim R = NumericUpDown7.Value                '[Ohm]
+        Dim Vrs = Vpp / (2 * Math.Sqrt(2))          '[A] RMS current through the load
+        Dim P = Vrs ^ 2 / R                         '[W] power through the load
+
+        TextBox38.Text = Vrs.ToString("F0")         '[V] series
+        TextBox51.Text = P.ToString("F0")           '[W] series
     End Sub
 End Class
