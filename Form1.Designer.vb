@@ -1145,10 +1145,10 @@ Partial Class Form1
         TabPage3.Controls.Add(Label15)
         TabPage3.Controls.Add(Button3)
         TabPage3.Controls.Add(GroupBox2)
-        TabPage3.Location = New Point(4, 39)
+        TabPage3.Location = New Point(4, 40)
         TabPage3.Name = "TabPage3"
         TabPage3.Padding = New Padding(3)
-        TabPage3.Size = New Size(1665, 761)
+        TabPage3.Size = New Size(1665, 760)
         TabPage3.TabIndex = 2
         TabPage3.Text = "LC filters"
         TabPage3.UseVisualStyleBackColor = True
@@ -1252,7 +1252,7 @@ Partial Class Form1
         NumericUpDown9.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
         NumericUpDown9.Location = New Point(350, 102)
         NumericUpDown9.Maximum = New Decimal(New Integer() {10000, 0, 0, 0})
-        NumericUpDown9.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        NumericUpDown9.Minimum = New Decimal(New Integer() {1, 0, 0, 262144})
         NumericUpDown9.Name = "NumericUpDown9"
         NumericUpDown9.Size = New Size(131, 38)
         NumericUpDown9.TabIndex = 24
@@ -1307,7 +1307,7 @@ Partial Class Form1
         NumericUpDown10.Font = New Font("Segoe UI", 9.857143F)
         NumericUpDown10.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
         NumericUpDown10.Location = New Point(350, 57)
-        NumericUpDown10.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        NumericUpDown10.Minimum = New Decimal(New Integer() {1, 0, 0, 196608})
         NumericUpDown10.Name = "NumericUpDown10"
         NumericUpDown10.Size = New Size(131, 38)
         NumericUpDown10.TabIndex = 22
@@ -1515,10 +1515,10 @@ Partial Class Form1
         TabPage5.Controls.Add(Button5)
         TabPage5.Controls.Add(GroupBox7)
         TabPage5.Controls.Add(PictureBox5)
-        TabPage5.Location = New Point(4, 40)
+        TabPage5.Location = New Point(4, 39)
         TabPage5.Name = "TabPage5"
         TabPage5.Padding = New Padding(3)
-        TabPage5.Size = New Size(1665, 760)
+        TabPage5.Size = New Size(1665, 761)
         TabPage5.TabIndex = 4
         TabPage5.Text = "Capacitors"
         TabPage5.UseVisualStyleBackColor = True
