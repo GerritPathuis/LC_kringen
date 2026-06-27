@@ -3,6 +3,35 @@ Imports System.Text
 
 
 Public Class Form1
+
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim sb As New StringBuilder
+        sb.AppendLine("Common @ 22mHz")
+        sb.AppendLine("R= 3.3/4.7 Ohm")
+        sb.AppendLine("C= 220/470 p")
+        TextBox27.Text = sb.ToString
+
+        sb.Clear()
+        sb.AppendLine("C= C1+C2+...+Cx")
+        TextBox15.Text = sb.ToString
+
+        sb.Clear()
+        sb.AppendLine("Z serie, Z parallel")
+        sb.AppendLine("One is L and one is C")
+        sb.AppendLine("The paralles sits at Rmax")
+        sb.AppendLine("Impedance Piezo Cleaning element is 20-40 ohm at resonance upto 200 when mounted and loaded")
+        sb.AppendLine("")
+        TextBox44.Text = sb.ToString
+
+        sb.Clear()
+        sb.AppendLine("Use 2 caps for DC isolation of the coil")
+        sb.AppendLine("If you split it into two capacitors, each capacitor must have twice the capacitance of the single calculated value ")
+        sb.AppendLine("")
+        sb.AppendLine("(since capacitors in series halve their total capacitance: \(\frac{1}{C_{total}} = \frac{1}{C_1} + \frac{1}{C_2}\))")
+        sb.AppendLine("")
+        TextBox48.Text = sb.ToString
+
+    End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click, TabPage1.Enter, NumericUpDown1.ValueChanged, NumericUpDown4.ValueChanged, NumericUpDown3.ValueChanged, NumericUpDown2.ValueChanged
         Dim I As Double = NumericUpDown2.Value      '[A]    
         Dim V As Double = NumericUpDown3.Value      '[V]
@@ -100,9 +129,11 @@ Public Class Form1
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click, TabPage5.Enter
-        Dim sb As New StringBuilder
-        sb.AppendLine("C= C1+C2+...+Cx")
-        TextBox15.Text = sb.ToString
+        Dim C1 = NumericUpDown31.Value              '[uF]
+        Dim C2 = NumericUpDown32.Value              '[uF]
+
+        Dim Cseries = 1 / (1 / C1 + 1 / C2)         '[uF]
+        TextBox52.Text = Cseries.ToString("F2")
     End Sub
 
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
@@ -135,31 +166,6 @@ Public Class Form1
         NumericUpDown5.Value = 14.7       'L[uH]->[H]
         NumericUpDown6.Value = 0.5        'R [ohm]
         NumericUpDown12.Value = 27955     'f [Hz]
-    End Sub
-
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim sb As New StringBuilder
-        sb.AppendLine("Common @ 22mHz")
-        sb.AppendLine("R= 3.3/4.7 Ohm")
-        sb.AppendLine("C= 220/470 p")
-        TextBox27.Text = sb.ToString
-
-        sb.Clear()
-        sb.AppendLine("Z serie, Z parallel")
-        sb.AppendLine("One is L and one is C")
-        sb.AppendLine("The paralles sits at Rmax")
-        sb.AppendLine("Impedance Piezo Cleaning element is 20-40 ohm at resonance upto 200 when mounted and loaded")
-        sb.AppendLine("")
-        TextBox44.Text = sb.ToString
-
-        sb.Clear()
-        sb.AppendLine("Use 2 caps for DC isolation of the coil")
-        sb.AppendLine("If you split it into two capacitors, each capacitor must have twice the capacitance of the single calculated value ")
-        sb.AppendLine("")
-        sb.AppendLine("(since capacitors in series halve their total capacitance: \(\frac{1}{C_{total}} = \frac{1}{C_1} + \frac{1}{C_2}\))")
-        sb.AppendLine("")
-        TextBox48.Text = sb.ToString
-
     End Sub
 
     Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click, NumericUpDown20.ValueChanged, NumericUpDown19.ValueChanged, NumericUpDown17.ValueChanged, NumericUpDown18.ValueChanged, NumericUpDown21.ValueChanged, NumericUpDown22.ValueChanged, NumericUpDown23.ValueChanged, NumericUpDown24.ValueChanged

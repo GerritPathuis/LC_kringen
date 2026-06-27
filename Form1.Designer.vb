@@ -133,6 +133,14 @@ Partial Class Form1
         NumericUpDown11 = New NumericUpDown()
         Label18 = New Label()
         TabPage5 = New TabPage()
+        GroupBox22 = New GroupBox()
+        NumericUpDown31 = New NumericUpDown()
+        Label76 = New Label()
+        Label75 = New Label()
+        TextBox52 = New TextBox()
+        NumericUpDown32 = New NumericUpDown()
+        Label78 = New Label()
+        PictureBox9 = New PictureBox()
         Button5 = New Button()
         GroupBox7 = New GroupBox()
         TextBox15 = New TextBox()
@@ -253,6 +261,10 @@ Partial Class Form1
         GroupBox3.SuspendLayout()
         CType(NumericUpDown11, ComponentModel.ISupportInitialize).BeginInit()
         TabPage5.SuspendLayout()
+        GroupBox22.SuspendLayout()
+        CType(NumericUpDown31, ComponentModel.ISupportInitialize).BeginInit()
+        CType(NumericUpDown32, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox9, ComponentModel.ISupportInitialize).BeginInit()
         GroupBox7.SuspendLayout()
         CType(PictureBox5, ComponentModel.ISupportInitialize).BeginInit()
         TabPage6.SuspendLayout()
@@ -1498,20 +1510,114 @@ Partial Class Form1
         ' 
         ' TabPage5
         ' 
+        TabPage5.Controls.Add(GroupBox22)
+        TabPage5.Controls.Add(PictureBox9)
         TabPage5.Controls.Add(Button5)
         TabPage5.Controls.Add(GroupBox7)
         TabPage5.Controls.Add(PictureBox5)
-        TabPage5.Location = New Point(4, 39)
+        TabPage5.Location = New Point(4, 40)
         TabPage5.Name = "TabPage5"
         TabPage5.Padding = New Padding(3)
-        TabPage5.Size = New Size(1665, 761)
+        TabPage5.Size = New Size(1665, 760)
         TabPage5.TabIndex = 4
         TabPage5.Text = "Capacitors"
         TabPage5.UseVisualStyleBackColor = True
         ' 
+        ' GroupBox22
+        ' 
+        GroupBox22.Controls.Add(NumericUpDown31)
+        GroupBox22.Controls.Add(Label76)
+        GroupBox22.Controls.Add(Label75)
+        GroupBox22.Controls.Add(TextBox52)
+        GroupBox22.Controls.Add(NumericUpDown32)
+        GroupBox22.Controls.Add(Label78)
+        GroupBox22.Location = New Point(119, 329)
+        GroupBox22.Name = "GroupBox22"
+        GroupBox22.Size = New Size(504, 231)
+        GroupBox22.TabIndex = 40
+        GroupBox22.TabStop = False
+        GroupBox22.Text = "Capacitors in series"
+        ' 
+        ' NumericUpDown31
+        ' 
+        NumericUpDown31.BackColor = Color.Yellow
+        NumericUpDown31.Font = New Font("Segoe UI", 9.857143F)
+        NumericUpDown31.Increment = New Decimal(New Integer() {10, 0, 0, 0})
+        NumericUpDown31.Location = New Point(350, 83)
+        NumericUpDown31.Maximum = New Decimal(New Integer() {1000, 0, 0, 0})
+        NumericUpDown31.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        NumericUpDown31.Name = "NumericUpDown31"
+        NumericUpDown31.Size = New Size(131, 38)
+        NumericUpDown31.TabIndex = 47
+        NumericUpDown31.TextAlign = HorizontalAlignment.Center
+        NumericUpDown31.Value = New Decimal(New Integer() {30, 0, 0, 0})
+        ' 
+        ' Label76
+        ' 
+        Label76.AutoSize = True
+        Label76.Font = New Font("Segoe UI", 9.857143F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label76.Location = New Point(17, 85)
+        Label76.Name = "Label76"
+        Label76.Size = New Size(164, 32)
+        Label76.TabIndex = 46
+        Label76.Text = "Capacitor [uC]"
+        ' 
+        ' Label75
+        ' 
+        Label75.AutoSize = True
+        Label75.Font = New Font("Segoe UI", 9.857143F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label75.Location = New Point(19, 171)
+        Label75.Name = "Label75"
+        Label75.Size = New Size(192, 32)
+        Label75.TabIndex = 45
+        Label75.Text = "Capacitance [uC]"
+        ' 
+        ' TextBox52
+        ' 
+        TextBox52.Location = New Point(352, 171)
+        TextBox52.Name = "TextBox52"
+        TextBox52.Size = New Size(131, 38)
+        TextBox52.TabIndex = 44
+        TextBox52.Text = " "
+        TextBox52.TextAlign = HorizontalAlignment.Center
+        ' 
+        ' NumericUpDown32
+        ' 
+        NumericUpDown32.BackColor = Color.Yellow
+        NumericUpDown32.Font = New Font("Segoe UI", 9.857143F)
+        NumericUpDown32.Increment = New Decimal(New Integer() {10, 0, 0, 0})
+        NumericUpDown32.Location = New Point(352, 39)
+        NumericUpDown32.Maximum = New Decimal(New Integer() {1000, 0, 0, 0})
+        NumericUpDown32.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        NumericUpDown32.Name = "NumericUpDown32"
+        NumericUpDown32.Size = New Size(131, 38)
+        NumericUpDown32.TabIndex = 37
+        NumericUpDown32.TextAlign = HorizontalAlignment.Center
+        NumericUpDown32.Value = New Decimal(New Integer() {30, 0, 0, 0})
+        ' 
+        ' Label78
+        ' 
+        Label78.AutoSize = True
+        Label78.Font = New Font("Segoe UI", 9.857143F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label78.Location = New Point(19, 41)
+        Label78.Name = "Label78"
+        Label78.Size = New Size(164, 32)
+        Label78.TabIndex = 26
+        Label78.Text = "Capacitor [uC]"
+        ' 
+        ' PictureBox9
+        ' 
+        PictureBox9.Image = CType(resources.GetObject("PictureBox9.Image"), Image)
+        PictureBox9.Location = New Point(954, 329)
+        PictureBox9.Name = "PictureBox9"
+        PictureBox9.Size = New Size(453, 249)
+        PictureBox9.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox9.TabIndex = 3
+        PictureBox9.TabStop = False
+        ' 
         ' Button5
         ' 
-        Button5.Location = New Point(700, 534)
+        Button5.Location = New Point(676, 662)
         Button5.Name = "Button5"
         Button5.Size = New Size(131, 40)
         Button5.TabIndex = 2
@@ -1523,7 +1629,7 @@ Partial Class Form1
         GroupBox7.Controls.Add(TextBox15)
         GroupBox7.Location = New Point(95, 60)
         GroupBox7.Name = "GroupBox7"
-        GroupBox7.Size = New Size(505, 221)
+        GroupBox7.Size = New Size(528, 221)
         GroupBox7.TabIndex = 1
         GroupBox7.TabStop = False
         GroupBox7.Text = "Capacitors in parallel"
@@ -1533,13 +1639,13 @@ Partial Class Form1
         TextBox15.Location = New Point(24, 54)
         TextBox15.Multiline = True
         TextBox15.Name = "TextBox15"
-        TextBox15.Size = New Size(407, 108)
+        TextBox15.Size = New Size(481, 136)
         TextBox15.TabIndex = 0
         ' 
         ' PictureBox5
         ' 
         PictureBox5.Image = CType(resources.GetObject("PictureBox5.Image"), Image)
-        PictureBox5.Location = New Point(806, 36)
+        PictureBox5.Location = New Point(954, 60)
         PictureBox5.Name = "PictureBox5"
         PictureBox5.Size = New Size(453, 245)
         PictureBox5.SizeMode = PictureBoxSizeMode.Zoom
@@ -2303,10 +2409,10 @@ Partial Class Form1
         TabPage9.Controls.Add(Button13)
         TabPage9.Controls.Add(Label9)
         TabPage9.Controls.Add(GroupBox21)
-        TabPage9.Location = New Point(4, 40)
+        TabPage9.Location = New Point(4, 39)
         TabPage9.Name = "TabPage9"
         TabPage9.Padding = New Padding(3)
-        TabPage9.Size = New Size(1665, 760)
+        TabPage9.Size = New Size(1665, 761)
         TabPage9.TabIndex = 8
         TabPage9.Text = "Power PIEZO"
         TabPage9.UseVisualStyleBackColor = True
@@ -2488,6 +2594,11 @@ Partial Class Form1
         GroupBox3.PerformLayout()
         CType(NumericUpDown11, ComponentModel.ISupportInitialize).EndInit()
         TabPage5.ResumeLayout(False)
+        GroupBox22.ResumeLayout(False)
+        GroupBox22.PerformLayout()
+        CType(NumericUpDown31, ComponentModel.ISupportInitialize).EndInit()
+        CType(NumericUpDown32, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox9, ComponentModel.ISupportInitialize).EndInit()
         GroupBox7.ResumeLayout(False)
         GroupBox7.PerformLayout()
         CType(PictureBox5, ComponentModel.ISupportInitialize).EndInit()
@@ -2744,5 +2855,13 @@ Partial Class Form1
     Friend WithEvents Label59 As Label
     Friend WithEvents Label72 As Label
     Friend WithEvents Button13 As Button
+    Friend WithEvents GroupBox22 As GroupBox
+    Friend WithEvents NumericUpDown31 As NumericUpDown
+    Friend WithEvents Label76 As Label
+    Friend WithEvents Label75 As Label
+    Friend WithEvents TextBox52 As TextBox
+    Friend WithEvents NumericUpDown32 As NumericUpDown
+    Friend WithEvents Label78 As Label
+    Friend WithEvents PictureBox9 As PictureBox
 
 End Class
