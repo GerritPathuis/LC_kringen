@@ -541,10 +541,10 @@ Partial Class Form1
         TabPage2.Controls.Add(GroupBox5)
         TabPage2.Controls.Add(Button2)
         TabPage2.Controls.Add(PictureBox2)
-        TabPage2.Location = New Point(4, 39)
+        TabPage2.Location = New Point(4, 40)
         TabPage2.Name = "TabPage2"
         TabPage2.Padding = New Padding(3)
-        TabPage2.Size = New Size(1665, 761)
+        TabPage2.Size = New Size(1665, 760)
         TabPage2.TabIndex = 1
         TabPage2.Text = "LC Tank"
         TabPage2.UseVisualStyleBackColor = True
@@ -834,9 +834,9 @@ Partial Class Form1
         Label29.Font = New Font("Segoe UI", 9.857143F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Label29.Location = New Point(19, 39)
         Label29.Name = "Label29"
-        Label29.Size = New Size(186, 32)
+        Label29.Size = New Size(115, 32)
         Label29.TabIndex = 37
-        Label29.Text = "Frequency [kHz]"
+        Label29.Text = "Freq. [Hz]"
         ' 
         ' Button9
         ' 
@@ -1133,7 +1133,7 @@ Partial Class Form1
         PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
         PictureBox2.Location = New Point(946, 3)
         PictureBox2.Name = "PictureBox2"
-        PictureBox2.Size = New Size(716, 755)
+        PictureBox2.Size = New Size(716, 754)
         PictureBox2.SizeMode = PictureBoxSizeMode.Zoom
         PictureBox2.TabIndex = 17
         PictureBox2.TabStop = False
@@ -1145,10 +1145,10 @@ Partial Class Form1
         TabPage3.Controls.Add(Label15)
         TabPage3.Controls.Add(Button3)
         TabPage3.Controls.Add(GroupBox2)
-        TabPage3.Location = New Point(4, 40)
+        TabPage3.Location = New Point(4, 39)
         TabPage3.Name = "TabPage3"
         TabPage3.Padding = New Padding(3)
-        TabPage3.Size = New Size(1665, 760)
+        TabPage3.Size = New Size(1665, 761)
         TabPage3.TabIndex = 2
         TabPage3.Text = "LC filters"
         TabPage3.UseVisualStyleBackColor = True

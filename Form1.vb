@@ -146,10 +146,10 @@ Public Class Form1
 
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
         ' For 28 kHz Piezo
-        NumericUpDown8.Value = 0.692      'Cx2[uF]->[F]
-        NumericUpDown5.Value = 34.0       'L[uH]->[H]
+        NumericUpDown8.Value = 1.154      'C[uF]->[F]
+        NumericUpDown5.Value = 28.0       'L[uH]->[H] Coil craft Trafo primairy 28uH
         NumericUpDown6.Value = 0.08       'R [ohm]
-        NumericUpDown12.Value = 32696     'f [Hz]
+        NumericUpDown12.Value = 28000     'f [Hz]
     End Sub
 
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
