@@ -542,10 +542,10 @@ Partial Class Form1
         TabPage2.Controls.Add(GroupBox5)
         TabPage2.Controls.Add(Button2)
         TabPage2.Controls.Add(PictureBox2)
-        TabPage2.Location = New Point(4, 39)
+        TabPage2.Location = New Point(4, 40)
         TabPage2.Name = "TabPage2"
         TabPage2.Padding = New Padding(3)
-        TabPage2.Size = New Size(1665, 761)
+        TabPage2.Size = New Size(1665, 760)
         TabPage2.TabIndex = 1
         TabPage2.Text = "LC Tank"
         TabPage2.UseVisualStyleBackColor = True
@@ -1134,7 +1134,7 @@ Partial Class Form1
         PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
         PictureBox2.Location = New Point(946, 3)
         PictureBox2.Name = "PictureBox2"
-        PictureBox2.Size = New Size(716, 755)
+        PictureBox2.Size = New Size(716, 754)
         PictureBox2.SizeMode = PictureBoxSizeMode.Zoom
         PictureBox2.TabIndex = 17
         PictureBox2.TabStop = False
@@ -2411,10 +2411,10 @@ Partial Class Form1
         TabPage9.Controls.Add(Button13)
         TabPage9.Controls.Add(Label9)
         TabPage9.Controls.Add(GroupBox21)
-        TabPage9.Location = New Point(4, 40)
+        TabPage9.Location = New Point(4, 39)
         TabPage9.Name = "TabPage9"
         TabPage9.Padding = New Padding(3)
-        TabPage9.Size = New Size(1665, 760)
+        TabPage9.Size = New Size(1665, 761)
         TabPage9.TabIndex = 8
         TabPage9.Text = "Power PIEZO"
         TabPage9.UseVisualStyleBackColor = True

@@ -33,6 +33,7 @@ Public Class Form1
 
         sb.Clear()
         sb.AppendLine("Measurement on 50W Piezo elements")
+        sb.AppendLine("Resonance= 28.2kHz")
         sb.AppendLine("Vsignal_generator= 1.0Vpp")
         sb.AppendLine("Piezo and Resistance (R=25 ohm) in series")
         sb.AppendLine("Looking for highest voltage over R= 142 mV")
@@ -164,10 +165,10 @@ Public Class Form1
 
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
         ' For 28 kHz Piezo
-        NumericUpDown8.Value = 0.0074     'C[uF]->[F]
+        NumericUpDown8.Value = 0.0079     'C[uF]->[F]
         NumericUpDown5.Value = 4032       'L[uH]->[H]
-        NumericUpDown6.Value = 300        'R [ohm]
-        NumericUpDown12.Value = 28045     'f [Hz]
+        NumericUpDown6.Value = 178        'R [ohm]
+        NumericUpDown12.Value = 28200     'f [Hz]
     End Sub
 
     Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
