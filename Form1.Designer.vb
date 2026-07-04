@@ -215,6 +215,7 @@ Partial Class Form1
         Label64 = New Label()
         Label65 = New Label()
         TabPage9 = New TabPage()
+        TextBox53 = New TextBox()
         Button13 = New Button()
         Label9 = New Label()
         GroupBox21 = New GroupBox()
@@ -541,10 +542,10 @@ Partial Class Form1
         TabPage2.Controls.Add(GroupBox5)
         TabPage2.Controls.Add(Button2)
         TabPage2.Controls.Add(PictureBox2)
-        TabPage2.Location = New Point(4, 40)
+        TabPage2.Location = New Point(4, 39)
         TabPage2.Name = "TabPage2"
         TabPage2.Padding = New Padding(3)
-        TabPage2.Size = New Size(1665, 760)
+        TabPage2.Size = New Size(1665, 761)
         TabPage2.TabIndex = 1
         TabPage2.Text = "LC Tank"
         TabPage2.UseVisualStyleBackColor = True
@@ -991,8 +992,8 @@ Partial Class Form1
         ' NumericUpDown8
         ' 
         NumericUpDown8.BackColor = Color.Yellow
-        NumericUpDown8.DecimalPlaces = 3
-        NumericUpDown8.Increment = New Decimal(New Integer() {1, 0, 0, 196608})
+        NumericUpDown8.DecimalPlaces = 4
+        NumericUpDown8.Increment = New Decimal(New Integer() {1, 0, 0, 262144})
         NumericUpDown8.Location = New Point(348, 37)
         NumericUpDown8.Maximum = New Decimal(New Integer() {1000, 0, 0, 0})
         NumericUpDown8.Minimum = New Decimal(New Integer() {1, 0, 0, 327680})
@@ -1099,7 +1100,7 @@ Partial Class Form1
         NumericUpDown5.DecimalPlaces = 1
         NumericUpDown5.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
         NumericUpDown5.Location = New Point(348, 81)
-        NumericUpDown5.Maximum = New Decimal(New Integer() {2000, 0, 0, 0})
+        NumericUpDown5.Maximum = New Decimal(New Integer() {35000, 0, 0, 0})
         NumericUpDown5.Minimum = New Decimal(New Integer() {1, 0, 0, 589824})
         NumericUpDown5.Name = "NumericUpDown5"
         NumericUpDown5.Size = New Size(142, 38)
@@ -1133,7 +1134,7 @@ Partial Class Form1
         PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
         PictureBox2.Location = New Point(946, 3)
         PictureBox2.Name = "PictureBox2"
-        PictureBox2.Size = New Size(716, 754)
+        PictureBox2.Size = New Size(716, 755)
         PictureBox2.SizeMode = PictureBoxSizeMode.Zoom
         PictureBox2.TabIndex = 17
         PictureBox2.TabStop = False
@@ -2406,16 +2407,25 @@ Partial Class Form1
         ' 
         ' TabPage9
         ' 
+        TabPage9.Controls.Add(TextBox53)
         TabPage9.Controls.Add(Button13)
         TabPage9.Controls.Add(Label9)
         TabPage9.Controls.Add(GroupBox21)
-        TabPage9.Location = New Point(4, 39)
+        TabPage9.Location = New Point(4, 40)
         TabPage9.Name = "TabPage9"
         TabPage9.Padding = New Padding(3)
-        TabPage9.Size = New Size(1665, 761)
+        TabPage9.Size = New Size(1665, 760)
         TabPage9.TabIndex = 8
         TabPage9.Text = "Power PIEZO"
         TabPage9.UseVisualStyleBackColor = True
+        ' 
+        ' TextBox53
+        ' 
+        TextBox53.Location = New Point(57, 425)
+        TextBox53.Multiline = True
+        TextBox53.Name = "TextBox53"
+        TextBox53.Size = New Size(797, 300)
+        TextBox53.TabIndex = 42
         ' 
         ' Button13
         ' 
@@ -2495,14 +2505,13 @@ Partial Class Form1
         ' 
         NumericUpDown7.BackColor = Color.Yellow
         NumericUpDown7.Font = New Font("Segoe UI", 9.857143F)
-        NumericUpDown7.Increment = New Decimal(New Integer() {10, 0, 0, 0})
         NumericUpDown7.Location = New Point(352, 127)
-        NumericUpDown7.Maximum = New Decimal(New Integer() {1000, 0, 0, 0})
+        NumericUpDown7.Maximum = New Decimal(New Integer() {300, 0, 0, 0})
         NumericUpDown7.Name = "NumericUpDown7"
         NumericUpDown7.Size = New Size(131, 38)
         NumericUpDown7.TabIndex = 38
         NumericUpDown7.TextAlign = HorizontalAlignment.Center
-        NumericUpDown7.Value = New Decimal(New Integer() {200, 0, 0, 0})
+        NumericUpDown7.Value = New Decimal(New Integer() {178, 0, 0, 0})
         ' 
         ' NumericUpDown27
         ' 
@@ -2863,5 +2872,6 @@ Partial Class Form1
     Friend WithEvents NumericUpDown32 As NumericUpDown
     Friend WithEvents Label78 As Label
     Friend WithEvents PictureBox9 As PictureBox
+    Friend WithEvents TextBox53 As TextBox
 
 End Class

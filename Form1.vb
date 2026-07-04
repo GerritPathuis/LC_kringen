@@ -31,6 +31,16 @@ Public Class Form1
         sb.AppendLine("")
         TextBox48.Text = sb.ToString
 
+        sb.Clear()
+        sb.AppendLine("Measurement on 50W Piezo elements")
+        sb.AppendLine("Vsignal_generator= 1.0Vpp")
+        sb.AppendLine("Piezo and Resistance (R=25 ohm) in series")
+        sb.AppendLine("Looking for highest voltage over R= 142 mV")
+        sb.AppendLine("Ir= Vr/R [Amp]")
+        sb.AppendLine("Ir= 142mV/25= 5.6 mAmp")
+        sb.AppendLine("Rpiezo= Vsignal/Ir= 1.0/0.0056= 178 Ohm")
+        TextBox53.Text = sb.ToString
+
     End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click, TabPage1.Enter, NumericUpDown1.ValueChanged, NumericUpDown4.ValueChanged, NumericUpDown3.ValueChanged, NumericUpDown2.ValueChanged
         Dim I As Double = NumericUpDown2.Value      '[A]    
@@ -154,9 +164,9 @@ Public Class Form1
 
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
         ' For 28 kHz Piezo
-        NumericUpDown8.Value = 1.5        'Cx2[uF]->[F]
-        NumericUpDown5.Value = 21.4       'L[uH]->[H]
-        NumericUpDown6.Value = 0.5        'R [ohm]
+        NumericUpDown8.Value = 0.0074     'C[uF]->[F]
+        NumericUpDown5.Value = 4032       'L[uH]->[H]
+        NumericUpDown6.Value = 300        'R [ohm]
         NumericUpDown12.Value = 28045     'f [Hz]
     End Sub
 
