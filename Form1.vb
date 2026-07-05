@@ -3,7 +3,6 @@ Imports System.Text
 
 
 Public Class Form1
-
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim sb As New StringBuilder
         sb.AppendLine("Common @ 22mHz")
@@ -34,12 +33,9 @@ Public Class Form1
         sb.Clear()
         sb.AppendLine("Measurement on 50W Piezo elements")
         sb.AppendLine("Resonance= 28.2kHz")
-        sb.AppendLine("Vsignal_generator= 1.0Vpp")
-        sb.AppendLine("Piezo and Resistance (R=25 ohm) in series")
-        sb.AppendLine("Looking for highest voltage over R= 142 mV")
-        sb.AppendLine("Ir= Vr/R [Amp]")
-        sb.AppendLine("Ir= 142mV/25= 5.6 mAmp")
-        sb.AppendLine("Rpiezo= Vsignal/Ir= 1.0/0.0056= 178 Ohm")
+        sb.AppendLine("Impedance is < 1.5 ohm at 500 Hz from resonance")
+        sb.AppendLine("Do not run at resonance")
+        sb.AppendLine("Piezo element 4.5 nF and 2 ohm in series")
         TextBox53.Text = sb.ToString
 
     End Sub
@@ -86,27 +82,27 @@ Public Class Form1
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click, NumericUpDown5.ValueChanged, NumericUpDown6.ValueChanged, NumericUpDown8.ValueChanged, NumericUpDown12.ValueChanged, NumericUpDown16.ValueChanged, NumericUpDown15.ValueChanged
         Dim sb As New StringBuilder
-        Dim C = NumericUpDown8.Value / 10 ^ 6         '[uF]->[F]
+        Dim C = NumericUpDown8.Value / 10 ^ 6           '[uF]->[F]
         Dim L = NumericUpDown5.Value / 10 ^ 6           '[uH]->[H]
         Dim R = NumericUpDown6.Value                    '[ohm]
 
-        Dim fact = NumericUpDown12.Value                '[Hz]
+        Dim fr = NumericUpDown12.Value                '[Hz]
         Dim Pow = NumericUpDown15.Value                 '[W]
         Dim vac = NumericUpDown16.Value                 '[V]
         Dim Qfac As Double = 0                          '[-]
 
         If L > 0 AndAlso C > 0 Then
-            Dim omega = 1 / Math.Sqrt(L * C)           '[rad/s]
-            Dim f = omega / (2 * Math.PI)                   '[Hz]
-            Dim xl = omega * L                              '[ohm]
-            Dim xc = 1 / (omega * C)                   '[ohm]
-            Dim z = Math.Sqrt(R ^ 2 + xl ^ 2 + xc ^ 2)      '[ohm]
+            Dim omega = 1 / Math.Sqrt(L * C)            '[rad/s]
+            Dim f = omega / (2 * Math.PI)               '[Hz]
+            Dim xl = omega * L                          '[ohm]
+            Dim xc = 1 / (omega * C)                    '[ohm]
+            Dim z = Math.Sqrt(R ^ 2 + xl ^ 2 + xc ^ 2)  '[ohm]
             Dim phase = Math.Atan((xl - xc) / R) ' * 180 / Math.PI '[degree]
             Dim q As Double = 0
             If L > 0 Then q = 1 / (R * Math.Sqrt(C / L)) '[-]
             '====== Actual numbers ======
-            Dim xcAct = 1 / (2 * Math.PI * fact * C)                '[ohm]
-            Dim xlAct = 2 * Math.PI * fact * L                    '[ohm]
+            Dim xcAct = 1 / (2 * Math.PI * fr * C)              '[ohm]
+            Dim xlAct = 2 * Math.PI * fr * L                    '[ohm]
             Dim zAct = Math.Sqrt(R ^ 2 + xlAct ^ 2 + xcAct ^ 2)   '[ohm]
             Dim phaseAct = Math.Atan((xlAct - xcAct) / R) * 180 / Math.PI '[degree] 
             '====== Power, Current ======
@@ -278,13 +274,19 @@ Public Class Form1
         TextBox47.Text = (c * 10 ^ 6).ToString("F2")        '[uF] series
     End Sub
 
-    Private Sub Button13_Click(sender As Object, e As EventArgs) Handles Button13.Click, NumericUpDown27.ValueChanged, NumericUpDown7.ValueChanged
-        Dim Vpp = NumericUpDown27.Value             '[V]
-        Dim R = NumericUpDown7.Value                '[Ohm]
-        Dim Vrs = Vpp / (2 * Math.Sqrt(2))          '[A] RMS current through the load
-        Dim P = Vrs ^ 2 / R                         '[W] power through the load
+    Private Sub Button13_Click(sender As Object, e As EventArgs) Handles Button13.Click, NumericUpDown27.ValueChanged, NumericUpDown33.ValueChanged, NumericUpDown34.ValueChanged, NumericUpDown7.ValueChanged
 
-        TextBox38.Text = Vrs.ToString("F0")         '[V] series
-        TextBox51.Text = P.ToString("F0")           '[W] series
+        Dim C = NumericUpDown33.Value / 10 ^ 9      '[nF]->[F]
+        Dim R = NumericUpDown34.Value               '[Ohm]
+        Dim freq = NumericUpDown7.Value * 10 ^ 3    '[Hz] frequency of the piezo
+        Dim Vpp = NumericUpDown27.Value             '[V]
+        Dim Vrms = Vpp / (2 * Math.Sqrt(2))         '[V] RMS current over the load
+
+        Dim Xc = 1 / (2 * Math.PI * freq * C)       '[Ohm] capacitive reactance at 28kHz
+        Dim Z = Math.Sqrt(R ^ 2 + Xc ^ 2)           '[Ohm] total impedance at 28kHz
+        Dim P = Vrms ^ 2 / Z                        '[W] power through the load
+
+        TextBox38.Text = Z.ToString("F1")           '[ohm] series
+        TextBox51.Text = P.ToString("F1")           '[W] series
     End Sub
 End Class

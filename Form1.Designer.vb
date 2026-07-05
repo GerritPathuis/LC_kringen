@@ -219,11 +219,15 @@ Partial Class Form1
         Button13 = New Button()
         Label9 = New Label()
         GroupBox21 = New GroupBox()
+        NumericUpDown7 = New NumericUpDown()
+        Label49 = New Label()
+        NumericUpDown34 = New NumericUpDown()
+        Label48 = New Label()
+        NumericUpDown33 = New NumericUpDown()
+        Label77 = New Label()
         Label74 = New Label()
         TextBox51 = New TextBox()
-        Label73 = New Label()
         TextBox38 = New TextBox()
-        NumericUpDown7 = New NumericUpDown()
         NumericUpDown27 = New NumericUpDown()
         Label59 = New Label()
         Label72 = New Label()
@@ -297,6 +301,8 @@ Partial Class Form1
         TabPage9.SuspendLayout()
         GroupBox21.SuspendLayout()
         CType(NumericUpDown7, ComponentModel.ISupportInitialize).BeginInit()
+        CType(NumericUpDown34, ComponentModel.ISupportInitialize).BeginInit()
+        CType(NumericUpDown33, ComponentModel.ISupportInitialize).BeginInit()
         CType(NumericUpDown27, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -542,10 +548,10 @@ Partial Class Form1
         TabPage2.Controls.Add(GroupBox5)
         TabPage2.Controls.Add(Button2)
         TabPage2.Controls.Add(PictureBox2)
-        TabPage2.Location = New Point(4, 40)
+        TabPage2.Location = New Point(4, 39)
         TabPage2.Name = "TabPage2"
         TabPage2.Padding = New Padding(3)
-        TabPage2.Size = New Size(1665, 760)
+        TabPage2.Size = New Size(1665, 761)
         TabPage2.TabIndex = 1
         TabPage2.Text = "LC Tank"
         TabPage2.UseVisualStyleBackColor = True
@@ -1134,7 +1140,7 @@ Partial Class Form1
         PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
         PictureBox2.Location = New Point(946, 3)
         PictureBox2.Name = "PictureBox2"
-        PictureBox2.Size = New Size(716, 754)
+        PictureBox2.Size = New Size(716, 755)
         PictureBox2.SizeMode = PictureBoxSizeMode.Zoom
         PictureBox2.TabIndex = 17
         PictureBox2.TabStop = False
@@ -2411,10 +2417,10 @@ Partial Class Form1
         TabPage9.Controls.Add(Button13)
         TabPage9.Controls.Add(Label9)
         TabPage9.Controls.Add(GroupBox21)
-        TabPage9.Location = New Point(4, 39)
+        TabPage9.Location = New Point(4, 40)
         TabPage9.Name = "TabPage9"
         TabPage9.Padding = New Padding(3)
-        TabPage9.Size = New Size(1665, 761)
+        TabPage9.Size = New Size(1665, 760)
         TabPage9.TabIndex = 8
         TabPage9.Text = "Power PIEZO"
         TabPage9.UseVisualStyleBackColor = True
@@ -2440,7 +2446,7 @@ Partial Class Form1
         ' 
         Label9.AutoSize = True
         Label9.Font = New Font("Segoe UI Black", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label9.Location = New Point(57, 95)
+        Label9.Location = New Point(57, 24)
         Label9.Name = "Label9"
         Label9.Size = New Size(387, 38)
         Label9.TabIndex = 40
@@ -2448,77 +2454,130 @@ Partial Class Form1
         ' 
         ' GroupBox21
         ' 
+        GroupBox21.Controls.Add(NumericUpDown7)
+        GroupBox21.Controls.Add(Label49)
+        GroupBox21.Controls.Add(NumericUpDown34)
+        GroupBox21.Controls.Add(Label48)
+        GroupBox21.Controls.Add(NumericUpDown33)
+        GroupBox21.Controls.Add(Label77)
         GroupBox21.Controls.Add(Label74)
         GroupBox21.Controls.Add(TextBox51)
-        GroupBox21.Controls.Add(Label73)
         GroupBox21.Controls.Add(TextBox38)
-        GroupBox21.Controls.Add(NumericUpDown7)
         GroupBox21.Controls.Add(NumericUpDown27)
         GroupBox21.Controls.Add(Label59)
         GroupBox21.Controls.Add(Label72)
-        GroupBox21.Location = New Point(57, 157)
+        GroupBox21.Location = New Point(57, 80)
         GroupBox21.Name = "GroupBox21"
-        GroupBox21.Size = New Size(504, 231)
+        GroupBox21.Size = New Size(504, 339)
         GroupBox21.TabIndex = 39
         GroupBox21.TabStop = False
         GroupBox21.Text = "Power consumption PIEZO"
+        ' 
+        ' NumericUpDown7
+        ' 
+        NumericUpDown7.BackColor = Color.Yellow
+        NumericUpDown7.DecimalPlaces = 1
+        NumericUpDown7.Font = New Font("Segoe UI", 9.857143F)
+        NumericUpDown7.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
+        NumericUpDown7.Location = New Point(352, 174)
+        NumericUpDown7.Maximum = New Decimal(New Integer() {50, 0, 0, 0})
+        NumericUpDown7.Minimum = New Decimal(New Integer() {10, 0, 0, 0})
+        NumericUpDown7.Name = "NumericUpDown7"
+        NumericUpDown7.Size = New Size(131, 38)
+        NumericUpDown7.TabIndex = 51
+        NumericUpDown7.TextAlign = HorizontalAlignment.Center
+        NumericUpDown7.Value = New Decimal(New Integer() {27, 0, 0, 0})
+        ' 
+        ' Label49
+        ' 
+        Label49.AutoSize = True
+        Label49.Font = New Font("Segoe UI", 9.857143F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label49.Location = New Point(15, 176)
+        Label49.Name = "Label49"
+        Label49.Size = New Size(187, 32)
+        Label49.TabIndex = 50
+        Label49.Text = "Frequency [Hz]"
+        ' 
+        ' NumericUpDown34
+        ' 
+        NumericUpDown34.BackColor = Color.Yellow
+        NumericUpDown34.DecimalPlaces = 1
+        NumericUpDown34.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
+        NumericUpDown34.Location = New Point(352, 81)
+        NumericUpDown34.Minimum = New Decimal(New Integer() {1, 0, 0, 65536})
+        NumericUpDown34.Name = "NumericUpDown34"
+        NumericUpDown34.Size = New Size(131, 38)
+        NumericUpDown34.TabIndex = 49
+        NumericUpDown34.TextAlign = HorizontalAlignment.Center
+        NumericUpDown34.Value = New Decimal(New Integer() {15, 0, 0, 65536})
+        ' 
+        ' Label48
+        ' 
+        Label48.AutoSize = True
+        Label48.Font = New Font("Segoe UI", 9.857143F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label48.Location = New Point(19, 87)
+        Label48.Name = "Label48"
+        Label48.Size = New Size(167, 32)
+        Label48.TabIndex = 48
+        Label48.Text = "R, Piezo [ohm]"
+        ' 
+        ' NumericUpDown33
+        ' 
+        NumericUpDown33.BackColor = Color.Yellow
+        NumericUpDown33.DecimalPlaces = 1
+        NumericUpDown33.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
+        NumericUpDown33.Location = New Point(352, 37)
+        NumericUpDown33.Minimum = New Decimal(New Integer() {1, 0, 0, 65536})
+        NumericUpDown33.Name = "NumericUpDown33"
+        NumericUpDown33.Size = New Size(131, 38)
+        NumericUpDown33.TabIndex = 47
+        NumericUpDown33.TextAlign = HorizontalAlignment.Center
+        NumericUpDown33.Value = New Decimal(New Integer() {45, 0, 0, 65536})
+        ' 
+        ' Label77
+        ' 
+        Label77.AutoSize = True
+        Label77.Font = New Font("Segoe UI", 9.857143F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label77.Location = New Point(19, 43)
+        Label77.Name = "Label77"
+        Label77.Size = New Size(193, 32)
+        Label77.TabIndex = 46
+        Label77.Text = "C, Piezo Cap [nF]"
         ' 
         ' Label74
         ' 
         Label74.AutoSize = True
         Label74.Font = New Font("Segoe UI", 9.857143F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label74.Location = New Point(19, 171)
+        Label74.Location = New Point(19, 264)
         Label74.Name = "Label74"
-        Label74.Size = New Size(268, 32)
+        Label74.Size = New Size(289, 32)
         Label74.TabIndex = 45
-        Label74.Text = "Power consumption [W]"
+        Label74.Text = "Power consumption [VAR]"
         ' 
         ' TextBox51
         ' 
-        TextBox51.Location = New Point(352, 171)
+        TextBox51.Location = New Point(352, 264)
         TextBox51.Name = "TextBox51"
         TextBox51.Size = New Size(131, 38)
         TextBox51.TabIndex = 44
         TextBox51.Text = " "
         TextBox51.TextAlign = HorizontalAlignment.Center
         ' 
-        ' Label73
-        ' 
-        Label73.AutoSize = True
-        Label73.Font = New Font("Segoe UI", 9.857143F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label73.Location = New Point(19, 83)
-        Label73.Name = "Label73"
-        Label73.Size = New Size(185, 32)
-        Label73.TabIndex = 43
-        Label73.Text = "RMS voltage [V]"
-        ' 
         ' TextBox38
         ' 
-        TextBox38.Location = New Point(352, 83)
+        TextBox38.Location = New Point(352, 219)
         TextBox38.Name = "TextBox38"
         TextBox38.Size = New Size(131, 38)
         TextBox38.TabIndex = 42
         TextBox38.Text = " "
         TextBox38.TextAlign = HorizontalAlignment.Center
         ' 
-        ' NumericUpDown7
-        ' 
-        NumericUpDown7.BackColor = Color.Yellow
-        NumericUpDown7.Font = New Font("Segoe UI", 9.857143F)
-        NumericUpDown7.Location = New Point(352, 127)
-        NumericUpDown7.Maximum = New Decimal(New Integer() {300, 0, 0, 0})
-        NumericUpDown7.Name = "NumericUpDown7"
-        NumericUpDown7.Size = New Size(131, 38)
-        NumericUpDown7.TabIndex = 38
-        NumericUpDown7.TextAlign = HorizontalAlignment.Center
-        NumericUpDown7.Value = New Decimal(New Integer() {178, 0, 0, 0})
-        ' 
         ' NumericUpDown27
         ' 
         NumericUpDown27.BackColor = Color.Yellow
         NumericUpDown27.Font = New Font("Segoe UI", 9.857143F)
         NumericUpDown27.Increment = New Decimal(New Integer() {10, 0, 0, 0})
-        NumericUpDown27.Location = New Point(352, 39)
+        NumericUpDown27.Location = New Point(352, 128)
         NumericUpDown27.Maximum = New Decimal(New Integer() {1000, 0, 0, 0})
         NumericUpDown27.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         NumericUpDown27.Name = "NumericUpDown27"
@@ -2531,7 +2590,7 @@ Partial Class Form1
         ' 
         Label59.AutoSize = True
         Label59.Font = New Font("Segoe UI", 9.857143F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label59.Location = New Point(15, 39)
+        Label59.Location = New Point(15, 132)
         Label59.Name = "Label59"
         Label59.Size = New Size(222, 32)
         Label59.TabIndex = 28
@@ -2541,11 +2600,11 @@ Partial Class Form1
         ' 
         Label72.AutoSize = True
         Label72.Font = New Font("Segoe UI", 9.857143F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label72.Location = New Point(19, 127)
+        Label72.Location = New Point(15, 221)
         Label72.Name = "Label72"
-        Label72.Size = New Size(198, 32)
+        Label72.Size = New Size(102, 32)
         Label72.TabIndex = 26
-        Label72.Text = "Resistance [Ohm]"
+        Label72.Text = "Z [Ohm]"
         ' 
         ' Form1
         ' 
@@ -2653,6 +2712,8 @@ Partial Class Form1
         GroupBox21.ResumeLayout(False)
         GroupBox21.PerformLayout()
         CType(NumericUpDown7, ComponentModel.ISupportInitialize).EndInit()
+        CType(NumericUpDown34, ComponentModel.ISupportInitialize).EndInit()
+        CType(NumericUpDown33, ComponentModel.ISupportInitialize).EndInit()
         CType(NumericUpDown27, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
@@ -2857,9 +2918,7 @@ Partial Class Form1
     Friend WithEvents GroupBox21 As GroupBox
     Friend WithEvents Label74 As Label
     Friend WithEvents TextBox51 As TextBox
-    Friend WithEvents Label73 As Label
     Friend WithEvents TextBox38 As TextBox
-    Friend WithEvents NumericUpDown7 As NumericUpDown
     Friend WithEvents NumericUpDown27 As NumericUpDown
     Friend WithEvents Label59 As Label
     Friend WithEvents Label72 As Label
@@ -2873,5 +2932,9 @@ Partial Class Form1
     Friend WithEvents Label78 As Label
     Friend WithEvents PictureBox9 As PictureBox
     Friend WithEvents TextBox53 As TextBox
+    Friend WithEvents NumericUpDown33 As NumericUpDown
+    Friend WithEvents Label77 As Label
+    Friend WithEvents NumericUpDown34 As NumericUpDown
+    Friend WithEvents NumericUpDown7 As NumericUpDown
 
 End Class
