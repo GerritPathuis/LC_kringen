@@ -48,28 +48,31 @@ Public Class Form1
 
         With ComboBox1
             .Items.Clear()
+            .Items.Add("F")
             .Items.Add("mF")
             .Items.Add("uF")
             .Items.Add("nF")
             .Items.Add("pF")
-            .SelectedIndex = 2
+            .SelectedIndex = 3
         End With
         With ComboBox2
             .Items.Clear()
+            .Items.Add("F")
             .Items.Add("mF")
             .Items.Add("uF")
             .Items.Add("nF")
             .Items.Add("pF")
-            .SelectedIndex = 2
+            .SelectedIndex = 3
         End With
 
         With ComboBox3
             .Items.Clear()
+            .Items.Add("H")
             .Items.Add("mH")
             .Items.Add("uH")
             .Items.Add("nH")
             .Items.Add("pH")
-            .SelectedIndex = 1
+            .SelectedIndex = 2
         End With
 
     End Sub
@@ -135,7 +138,7 @@ Public Class Form1
 
         Dim R = NumericUpDown6.Value                    '[ohm]
 
-        Dim fr = NumericUpDown12.Value                '[Hz]
+        Dim fr = NumericUpDown12.Value                  '[Hz]
         Dim Pow = NumericUpDown15.Value                 '[W]
         Dim vac = NumericUpDown16.Value                 '[V]
         Dim Qfac As Double = 0                          '[-]
@@ -174,8 +177,8 @@ Public Class Form1
 
             '====== Q factor ======
             Qfac = 1.0 / R * Math.Sqrt(L / C)
-            TextBox23.Text = (C * 10 ^ 9).ToString("F1")    '[uF] 
-            TextBox24.Text = (L * 10 ^ 9).ToString("F1")            '[uH]
+            TextBox23.Text = (C * 10 ^ 6).ToString("F1")    '[uF] 
+            TextBox24.Text = (L * 10 ^ 6).ToString("F1")            '[uH]
             TextBox25.Text = R.ToString("F2")                       '[ohm] 
             TextBox26.Text = Qfac.ToString("F1")                    '[-]   
         End If
@@ -329,6 +332,8 @@ Public Class Form1
     End Sub
     Public Shared Function ConvertCapacitance(value As Double, unit As String) As Double
         Select Case unit
+            Case "F"
+                Return value * 1
             Case "mF"
                 Return value * 10 ^ -3
             Case "uF"
@@ -343,6 +348,8 @@ Public Class Form1
     End Function
     Public Shared Function ConvertInductance(value As Double, unit As String) As Double
         Select Case unit
+            Case "H"
+                Return value * 1
             Case "mH"
                 Return value * 10 ^ -3
             Case "uH"
@@ -358,10 +365,11 @@ Public Class Form1
 
     Private Sub Button13_Click(sender As Object, e As EventArgs) Handles Button13.Click, NumericUpDown27.ValueChanged, NumericUpDown34.ValueChanged, NumericUpDown7.ValueChanged, NumericUpDown36.ValueChanged, ComboBox1.SelectedIndexChanged
         Dim R1 = NumericUpDown34.Value    '[Ohm]
-        Dim C1 As Double = NumericUpDown36.Value
+        Dim C1 As Double
+
         '==== C1 unit conversion ====   
         If ComboBox1.SelectedItem IsNot Nothing Then
-            C1 *= ConvertCapacitance(C1, ComboBox1.SelectedItem.ToString)
+            C1 = ConvertCapacitance(NumericUpDown36.Value, ComboBox1.SelectedItem.ToString)
         Else
             Return
         End If
