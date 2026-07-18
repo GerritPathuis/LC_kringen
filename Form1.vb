@@ -38,7 +38,39 @@ Public Class Form1
         sb.AppendLine("Run near resonance for efficiency")
         sb.AppendLine("Run above resonance for ZVS")
         sb.AppendLine("Piezo element 4.5 nF and 30 ohm in series")
+        sb.AppendLine("Impedance Xc= 1/(2.pi.f.C) and or -jXc ")
+        sb.AppendLine("|Z|= sqrt(R^2 + Xc^2)")
+        sb.AppendLine("Reactance= Xl-Xc")
+        sb.AppendLine("At resonance Xl=Xc, 30 ohm remains")
+        sb.AppendLine("Smith Chart")
+        sb.AppendLine("At resonance Xl=Xc, 30 ohm remains")
         TextBox53.Text = sb.ToString
+
+        With ComboBox1
+            .Items.Clear()
+            .Items.Add("mF")
+            .Items.Add("uF")
+            .Items.Add("nF")
+            .Items.Add("pF")
+            .SelectedIndex = 2
+        End With
+        With ComboBox2
+            .Items.Clear()
+            .Items.Add("mF")
+            .Items.Add("uF")
+            .Items.Add("nF")
+            .Items.Add("pF")
+            .SelectedIndex = 2
+        End With
+
+        With ComboBox3
+            .Items.Clear()
+            .Items.Add("mH")
+            .Items.Add("uH")
+            .Items.Add("nH")
+            .Items.Add("pH")
+            .SelectedIndex = 1
+        End With
 
     End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click, TabPage1.Enter, NumericUpDown1.ValueChanged, NumericUpDown4.ValueChanged, NumericUpDown3.ValueChanged, NumericUpDown2.ValueChanged
@@ -82,10 +114,25 @@ Public Class Form1
         TextBox8.Text = Area.ToString("F2")     '[mm2] cross section area of the wire
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click, NumericUpDown5.ValueChanged, NumericUpDown6.ValueChanged, NumericUpDown8.ValueChanged, NumericUpDown12.ValueChanged, NumericUpDown16.ValueChanged, NumericUpDown15.ValueChanged
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click, NumericUpDown5.ValueChanged, NumericUpDown6.ValueChanged, NumericUpDown8.ValueChanged, NumericUpDown12.ValueChanged, NumericUpDown16.ValueChanged, NumericUpDown15.ValueChanged, ComboBox2.SelectedIndexChanged, ComboBox3.SelectedIndexChanged
         Dim sb As New StringBuilder
-        Dim C = NumericUpDown8.Value / 10 ^ 6           '[uF]->[F]
-        Dim L = NumericUpDown5.Value / 10 ^ 6           '[uH]->[H]
+        Dim C As Double          '[F]
+        Dim L As Double          '[H]
+
+        '==== C unit conversion ====   
+        If ComboBox2.SelectedItem IsNot Nothing Then
+            C = ConvertCapacitance(NumericUpDown8.Value, ComboBox2.SelectedItem.ToString)
+        Else
+            Return
+        End If
+
+        '==== L unit conversion ====   
+        If ComboBox3.SelectedItem IsNot Nothing Then
+            L = ConvertInductance(NumericUpDown5.Value, ComboBox3.SelectedItem.ToString)
+        Else
+            Return
+        End If
+
         Dim R = NumericUpDown6.Value                    '[ohm]
 
         Dim fr = NumericUpDown12.Value                '[Hz]
@@ -280,18 +327,43 @@ Public Class Form1
         TextBox46.Text = (c * 10 ^ 9).ToString("F1")        '[nF] series
         TextBox47.Text = (c * 10 ^ 6).ToString("F2")        '[uF] series
     End Sub
+    Public Shared Function ConvertCapacitance(value As Double, unit As String) As Double
+        Select Case unit
+            Case "mF"
+                Return value * 10 ^ -3
+            Case "uF"
+                Return value * 10 ^ -6
+            Case "nF"
+                Return value * 10 ^ -9
+            Case "pF"
+                Return value * 10 ^ -12
+            Case Else
+                Throw New ArgumentException("Invalid capacitance unit.")
+        End Select
+    End Function
+    Public Shared Function ConvertInductance(value As Double, unit As String) As Double
+        Select Case unit
+            Case "mH"
+                Return value * 10 ^ -3
+            Case "uH"
+                Return value * 10 ^ -6
+            Case "nH"
+                Return value * 10 ^ -9
+            Case "pH"
+                Return value * 10 ^ -12
+            Case Else
+                Throw New ArgumentException("Invalid capacitance unit.")
+        End Select
+    End Function
 
-    Private Sub Button13_Click(sender As Object, e As EventArgs) Handles Button13.Click, NumericUpDown27.ValueChanged, NumericUpDown34.ValueChanged, NumericUpDown7.ValueChanged, RadioButton6.CheckedChanged, RadioButton5.CheckedChanged, RadioButton4.CheckedChanged, NumericUpDown36.ValueChanged
-        Dim C1 = NumericUpDown36.Value    '[F]
+    Private Sub Button13_Click(sender As Object, e As EventArgs) Handles Button13.Click, NumericUpDown27.ValueChanged, NumericUpDown34.ValueChanged, NumericUpDown7.ValueChanged, NumericUpDown36.ValueChanged, ComboBox1.SelectedIndexChanged
         Dim R1 = NumericUpDown34.Value    '[Ohm]
-
+        Dim C1 As Double = NumericUpDown36.Value
         '==== C1 unit conversion ====   
-        If RadioButton6.Checked Then
-            C1 /= 10 ^ 6
-        ElseIf RadioButton5.Checked Then
-            C1 /= 10 ^ 9
-        ElseIf RadioButton4.Checked Then
-            C1 /= 10 ^ 12
+        If ComboBox1.SelectedItem IsNot Nothing Then
+            C1 *= ConvertCapacitance(C1, ComboBox1.SelectedItem.ToString)
+        Else
+            Return
         End If
 
         Dim freq = NumericUpDown7.Value * 10 ^ 3    '[Hz] frequency of the piezo
@@ -299,7 +371,7 @@ Public Class Form1
         Dim Vrms = Vpp / (2 * Math.Sqrt(2))         '[V] RMS current over the load
 
         Dim Xc1 = 1 / (2 * Math.PI * freq * C1)     '[Ohm] capacitive reactance at 28kHz
-        Dim Xseries = Xc1 + R1                      '[Ohm] series reactance at 28kHz
+        Dim Xseries = Math.Sqrt(Xc1 ^ 2 + R1 ^ 2)   '[Ohm] series reactance at 28kHz
 
         Dim P = Vrms ^ 2 / Xseries                  '[W] power through the load
 
