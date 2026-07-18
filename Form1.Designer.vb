@@ -215,14 +215,32 @@ Partial Class Form1
         Label64 = New Label()
         Label65 = New Label()
         TabPage9 = New TabPage()
+        GroupBox12 = New GroupBox()
+        PictureBox10 = New PictureBox()
         TextBox53 = New TextBox()
         Button13 = New Button()
         Label9 = New Label()
         GroupBox21 = New GroupBox()
-        NumericUpDown7 = New NumericUpDown()
-        Label49 = New Label()
+        Panel3 = New Panel()
+        RadioButton7 = New RadioButton()
+        RadioButton8 = New RadioButton()
+        RadioButton9 = New RadioButton()
+        Panel2 = New Panel()
+        RadioButton4 = New RadioButton()
+        RadioButton5 = New RadioButton()
+        RadioButton6 = New RadioButton()
+        Panel1 = New Panel()
+        RadioButton3 = New RadioButton()
+        RadioButton2 = New RadioButton()
+        RadioButton1 = New RadioButton()
+        NumericUpDown36 = New NumericUpDown()
+        Label51 = New Label()
+        NumericUpDown35 = New NumericUpDown()
+        Label50 = New Label()
         NumericUpDown34 = New NumericUpDown()
         Label48 = New Label()
+        NumericUpDown7 = New NumericUpDown()
+        Label49 = New Label()
         NumericUpDown33 = New NumericUpDown()
         Label77 = New Label()
         Label74 = New Label()
@@ -299,9 +317,16 @@ Partial Class Form1
         CType(NumericUpDown28, ComponentModel.ISupportInitialize).BeginInit()
         CType(NumericUpDown30, ComponentModel.ISupportInitialize).BeginInit()
         TabPage9.SuspendLayout()
+        GroupBox12.SuspendLayout()
+        CType(PictureBox10, ComponentModel.ISupportInitialize).BeginInit()
         GroupBox21.SuspendLayout()
-        CType(NumericUpDown7, ComponentModel.ISupportInitialize).BeginInit()
+        Panel3.SuspendLayout()
+        Panel2.SuspendLayout()
+        Panel1.SuspendLayout()
+        CType(NumericUpDown36, ComponentModel.ISupportInitialize).BeginInit()
+        CType(NumericUpDown35, ComponentModel.ISupportInitialize).BeginInit()
         CType(NumericUpDown34, ComponentModel.ISupportInitialize).BeginInit()
+        CType(NumericUpDown7, ComponentModel.ISupportInitialize).BeginInit()
         CType(NumericUpDown33, ComponentModel.ISupportInitialize).BeginInit()
         CType(NumericUpDown27, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -2413,6 +2438,7 @@ Partial Class Form1
         ' 
         ' TabPage9
         ' 
+        TabPage9.Controls.Add(GroupBox12)
         TabPage9.Controls.Add(TextBox53)
         TabPage9.Controls.Add(Button13)
         TabPage9.Controls.Add(Label9)
@@ -2422,20 +2448,41 @@ Partial Class Form1
         TabPage9.Padding = New Padding(3)
         TabPage9.Size = New Size(1665, 760)
         TabPage9.TabIndex = 8
-        TabPage9.Text = "Power PIEZO"
+        TabPage9.Text = "P.Equivalent"
         TabPage9.UseVisualStyleBackColor = True
+        ' 
+        ' GroupBox12
+        ' 
+        GroupBox12.Controls.Add(PictureBox10)
+        GroupBox12.Location = New Point(1069, 39)
+        GroupBox12.Name = "GroupBox12"
+        GroupBox12.Size = New Size(342, 330)
+        GroupBox12.TabIndex = 44
+        GroupBox12.TabStop = False
+        GroupBox12.Text = "Piezo equivalent"
+        ' 
+        ' PictureBox10
+        ' 
+        PictureBox10.Dock = DockStyle.Fill
+        PictureBox10.Image = CType(resources.GetObject("PictureBox10.Image"), Image)
+        PictureBox10.Location = New Point(3, 34)
+        PictureBox10.Name = "PictureBox10"
+        PictureBox10.Size = New Size(336, 293)
+        PictureBox10.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox10.TabIndex = 43
+        PictureBox10.TabStop = False
         ' 
         ' TextBox53
         ' 
-        TextBox53.Location = New Point(57, 425)
+        TextBox53.Location = New Point(1072, 384)
         TextBox53.Multiline = True
         TextBox53.Name = "TextBox53"
-        TextBox53.Size = New Size(797, 300)
+        TextBox53.Size = New Size(504, 300)
         TextBox53.TabIndex = 42
         ' 
         ' Button13
         ' 
-        Button13.Location = New Point(947, 425)
+        Button13.Location = New Point(360, 642)
         Button13.Name = "Button13"
         Button13.Size = New Size(212, 65)
         Button13.TabIndex = 41
@@ -2454,10 +2501,17 @@ Partial Class Form1
         ' 
         ' GroupBox21
         ' 
-        GroupBox21.Controls.Add(NumericUpDown7)
-        GroupBox21.Controls.Add(Label49)
+        GroupBox21.Controls.Add(Panel3)
+        GroupBox21.Controls.Add(Panel2)
+        GroupBox21.Controls.Add(Panel1)
+        GroupBox21.Controls.Add(NumericUpDown36)
+        GroupBox21.Controls.Add(Label51)
+        GroupBox21.Controls.Add(NumericUpDown35)
+        GroupBox21.Controls.Add(Label50)
         GroupBox21.Controls.Add(NumericUpDown34)
         GroupBox21.Controls.Add(Label48)
+        GroupBox21.Controls.Add(NumericUpDown7)
+        GroupBox21.Controls.Add(Label49)
         GroupBox21.Controls.Add(NumericUpDown33)
         GroupBox21.Controls.Add(Label77)
         GroupBox21.Controls.Add(Label74)
@@ -2468,45 +2522,198 @@ Partial Class Form1
         GroupBox21.Controls.Add(Label72)
         GroupBox21.Location = New Point(57, 80)
         GroupBox21.Name = "GroupBox21"
-        GroupBox21.Size = New Size(504, 339)
+        GroupBox21.Size = New Size(752, 489)
         GroupBox21.TabIndex = 39
         GroupBox21.TabStop = False
         GroupBox21.Text = "Power consumption PIEZO"
         ' 
-        ' NumericUpDown7
+        ' Panel3
         ' 
-        NumericUpDown7.BackColor = Color.Yellow
-        NumericUpDown7.DecimalPlaces = 1
-        NumericUpDown7.Font = New Font("Segoe UI", 9.857143F)
-        NumericUpDown7.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
-        NumericUpDown7.Location = New Point(352, 174)
-        NumericUpDown7.Maximum = New Decimal(New Integer() {50, 0, 0, 0})
-        NumericUpDown7.Minimum = New Decimal(New Integer() {10, 0, 0, 0})
-        NumericUpDown7.Name = "NumericUpDown7"
-        NumericUpDown7.Size = New Size(131, 38)
-        NumericUpDown7.TabIndex = 51
-        NumericUpDown7.TextAlign = HorizontalAlignment.Center
-        NumericUpDown7.Value = New Decimal(New Integer() {27, 0, 0, 0})
+        Panel3.Controls.Add(RadioButton7)
+        Panel3.Controls.Add(RadioButton8)
+        Panel3.Controls.Add(RadioButton9)
+        Panel3.Font = New Font("Segoe UI", 8.142858F)
+        Panel3.Location = New Point(509, 125)
+        Panel3.Name = "Panel3"
+        Panel3.Size = New Size(181, 45)
+        Panel3.TabIndex = 57
         ' 
-        ' Label49
+        ' RadioButton7
         ' 
-        Label49.AutoSize = True
-        Label49.Font = New Font("Segoe UI", 9.857143F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label49.Location = New Point(15, 176)
-        Label49.Name = "Label49"
-        Label49.Size = New Size(187, 32)
-        Label49.TabIndex = 50
-        Label49.Text = "Frequency [Hz]"
+        RadioButton7.AutoSize = True
+        RadioButton7.Location = New Point(121, 5)
+        RadioButton7.Name = "RadioButton7"
+        RadioButton7.Size = New Size(49, 32)
+        RadioButton7.TabIndex = 2
+        RadioButton7.Text = "p"
+        RadioButton7.UseVisualStyleBackColor = True
+        ' 
+        ' RadioButton8
+        ' 
+        RadioButton8.AutoSize = True
+        RadioButton8.Checked = True
+        RadioButton8.Location = New Point(62, 4)
+        RadioButton8.Name = "RadioButton8"
+        RadioButton8.Size = New Size(48, 32)
+        RadioButton8.TabIndex = 1
+        RadioButton8.TabStop = True
+        RadioButton8.Text = "n"
+        RadioButton8.UseVisualStyleBackColor = True
+        ' 
+        ' RadioButton9
+        ' 
+        RadioButton9.AutoSize = True
+        RadioButton9.Location = New Point(3, 4)
+        RadioButton9.Name = "RadioButton9"
+        RadioButton9.Size = New Size(48, 32)
+        RadioButton9.TabIndex = 0
+        RadioButton9.Text = "u"
+        RadioButton9.UseVisualStyleBackColor = True
+        ' 
+        ' Panel2
+        ' 
+        Panel2.Controls.Add(RadioButton4)
+        Panel2.Controls.Add(RadioButton5)
+        Panel2.Controls.Add(RadioButton6)
+        Panel2.Font = New Font("Segoe UI", 8.142858F)
+        Panel2.Location = New Point(509, 80)
+        Panel2.Name = "Panel2"
+        Panel2.Size = New Size(181, 36)
+        Panel2.TabIndex = 57
+        ' 
+        ' RadioButton4
+        ' 
+        RadioButton4.AutoSize = True
+        RadioButton4.Location = New Point(121, 3)
+        RadioButton4.Name = "RadioButton4"
+        RadioButton4.Size = New Size(49, 32)
+        RadioButton4.TabIndex = 2
+        RadioButton4.Text = "p"
+        RadioButton4.UseVisualStyleBackColor = True
+        ' 
+        ' RadioButton5
+        ' 
+        RadioButton5.AutoSize = True
+        RadioButton5.Checked = True
+        RadioButton5.Location = New Point(62, 3)
+        RadioButton5.Name = "RadioButton5"
+        RadioButton5.Size = New Size(48, 32)
+        RadioButton5.TabIndex = 1
+        RadioButton5.TabStop = True
+        RadioButton5.Text = "n"
+        RadioButton5.UseVisualStyleBackColor = True
+        ' 
+        ' RadioButton6
+        ' 
+        RadioButton6.AutoSize = True
+        RadioButton6.Location = New Point(3, 3)
+        RadioButton6.Name = "RadioButton6"
+        RadioButton6.Size = New Size(48, 32)
+        RadioButton6.TabIndex = 0
+        RadioButton6.Text = "u"
+        RadioButton6.UseVisualStyleBackColor = True
+        ' 
+        ' Panel1
+        ' 
+        Panel1.Controls.Add(RadioButton3)
+        Panel1.Controls.Add(RadioButton2)
+        Panel1.Controls.Add(RadioButton1)
+        Panel1.Font = New Font("Segoe UI", 8.142858F)
+        Panel1.Location = New Point(509, 32)
+        Panel1.Name = "Panel1"
+        Panel1.Size = New Size(181, 37)
+        Panel1.TabIndex = 56
+        ' 
+        ' RadioButton3
+        ' 
+        RadioButton3.AutoSize = True
+        RadioButton3.Location = New Point(121, 4)
+        RadioButton3.Name = "RadioButton3"
+        RadioButton3.Size = New Size(49, 32)
+        RadioButton3.TabIndex = 2
+        RadioButton3.Text = "p"
+        RadioButton3.UseVisualStyleBackColor = True
+        ' 
+        ' RadioButton2
+        ' 
+        RadioButton2.AutoSize = True
+        RadioButton2.Checked = True
+        RadioButton2.Location = New Point(62, 4)
+        RadioButton2.Name = "RadioButton2"
+        RadioButton2.Size = New Size(48, 32)
+        RadioButton2.TabIndex = 1
+        RadioButton2.TabStop = True
+        RadioButton2.Text = "n"
+        RadioButton2.UseVisualStyleBackColor = True
+        ' 
+        ' RadioButton1
+        ' 
+        RadioButton1.AutoSize = True
+        RadioButton1.Location = New Point(3, 4)
+        RadioButton1.Name = "RadioButton1"
+        RadioButton1.Size = New Size(48, 32)
+        RadioButton1.TabIndex = 0
+        RadioButton1.Text = "u"
+        RadioButton1.UseVisualStyleBackColor = True
+        ' 
+        ' NumericUpDown36
+        ' 
+        NumericUpDown36.BackColor = Color.Yellow
+        NumericUpDown36.DecimalPlaces = 1
+        NumericUpDown36.Font = New Font("Microsoft Sans Serif", 9.857143F)
+        NumericUpDown36.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
+        NumericUpDown36.Location = New Point(352, 81)
+        NumericUpDown36.Minimum = New Decimal(New Integer() {1, 0, 0, 65536})
+        NumericUpDown36.Name = "NumericUpDown36"
+        NumericUpDown36.Size = New Size(131, 34)
+        NumericUpDown36.TabIndex = 55
+        NumericUpDown36.TextAlign = HorizontalAlignment.Center
+        NumericUpDown36.Value = New Decimal(New Integer() {45, 0, 0, 65536})
+        ' 
+        ' Label51
+        ' 
+        Label51.AutoSize = True
+        Label51.Font = New Font("Microsoft Sans Serif", 9.857143F)
+        Label51.Location = New Point(19, 87)
+        Label51.Name = "Label51"
+        Label51.Size = New Size(166, 29)
+        Label51.TabIndex = 54
+        Label51.Text = "C1, Piezo Cap"
+        ' 
+        ' NumericUpDown35
+        ' 
+        NumericUpDown35.BackColor = Color.Yellow
+        NumericUpDown35.DecimalPlaces = 1
+        NumericUpDown35.Font = New Font("Microsoft Sans Serif", 9.857143F)
+        NumericUpDown35.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
+        NumericUpDown35.Location = New Point(352, 125)
+        NumericUpDown35.Minimum = New Decimal(New Integer() {1, 0, 0, 65536})
+        NumericUpDown35.Name = "NumericUpDown35"
+        NumericUpDown35.Size = New Size(131, 34)
+        NumericUpDown35.TabIndex = 53
+        NumericUpDown35.TextAlign = HorizontalAlignment.Center
+        NumericUpDown35.Value = New Decimal(New Integer() {15, 0, 0, 65536})
+        ' 
+        ' Label50
+        ' 
+        Label50.AutoSize = True
+        Label50.Font = New Font("Microsoft Sans Serif", 9.857143F)
+        Label50.Location = New Point(19, 131)
+        Label50.Name = "Label50"
+        Label50.Size = New Size(112, 29)
+        Label50.TabIndex = 52
+        Label50.Text = "L1, Piezo"
         ' 
         ' NumericUpDown34
         ' 
         NumericUpDown34.BackColor = Color.Yellow
         NumericUpDown34.DecimalPlaces = 1
+        NumericUpDown34.Font = New Font("Microsoft Sans Serif", 9.857143F)
         NumericUpDown34.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
-        NumericUpDown34.Location = New Point(352, 81)
+        NumericUpDown34.Location = New Point(352, 169)
         NumericUpDown34.Minimum = New Decimal(New Integer() {1, 0, 0, 65536})
         NumericUpDown34.Name = "NumericUpDown34"
-        NumericUpDown34.Size = New Size(131, 38)
+        NumericUpDown34.Size = New Size(131, 34)
         NumericUpDown34.TabIndex = 49
         NumericUpDown34.TextAlign = HorizontalAlignment.Center
         NumericUpDown34.Value = New Decimal(New Integer() {15, 0, 0, 65536})
@@ -2514,22 +2721,48 @@ Partial Class Form1
         ' Label48
         ' 
         Label48.AutoSize = True
-        Label48.Font = New Font("Segoe UI", 9.857143F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label48.Location = New Point(19, 87)
+        Label48.Font = New Font("Microsoft Sans Serif", 9.857143F)
+        Label48.Location = New Point(19, 175)
         Label48.Name = "Label48"
-        Label48.Size = New Size(167, 32)
+        Label48.Size = New Size(183, 29)
         Label48.TabIndex = 48
-        Label48.Text = "R, Piezo [ohm]"
+        Label48.Text = "R1, Piezo [ohm]"
+        ' 
+        ' NumericUpDown7
+        ' 
+        NumericUpDown7.BackColor = Color.Yellow
+        NumericUpDown7.DecimalPlaces = 1
+        NumericUpDown7.Font = New Font("Microsoft Sans Serif", 9.857143F)
+        NumericUpDown7.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
+        NumericUpDown7.Location = New Point(352, 318)
+        NumericUpDown7.Maximum = New Decimal(New Integer() {50, 0, 0, 0})
+        NumericUpDown7.Minimum = New Decimal(New Integer() {10, 0, 0, 0})
+        NumericUpDown7.Name = "NumericUpDown7"
+        NumericUpDown7.Size = New Size(131, 34)
+        NumericUpDown7.TabIndex = 51
+        NumericUpDown7.TextAlign = HorizontalAlignment.Center
+        NumericUpDown7.Value = New Decimal(New Integer() {27, 0, 0, 0})
+        ' 
+        ' Label49
+        ' 
+        Label49.AutoSize = True
+        Label49.Font = New Font("Microsoft Sans Serif", 9.857143F)
+        Label49.Location = New Point(15, 320)
+        Label49.Name = "Label49"
+        Label49.Size = New Size(175, 29)
+        Label49.TabIndex = 50
+        Label49.Text = "Frequency [Hz]"
         ' 
         ' NumericUpDown33
         ' 
         NumericUpDown33.BackColor = Color.Yellow
         NumericUpDown33.DecimalPlaces = 1
+        NumericUpDown33.Font = New Font("Microsoft Sans Serif", 9.857143F)
         NumericUpDown33.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
         NumericUpDown33.Location = New Point(352, 37)
         NumericUpDown33.Minimum = New Decimal(New Integer() {1, 0, 0, 65536})
         NumericUpDown33.Name = "NumericUpDown33"
-        NumericUpDown33.Size = New Size(131, 38)
+        NumericUpDown33.Size = New Size(131, 34)
         NumericUpDown33.TabIndex = 47
         NumericUpDown33.TextAlign = HorizontalAlignment.Center
         NumericUpDown33.Value = New Decimal(New Integer() {45, 0, 0, 65536})
@@ -2537,37 +2770,39 @@ Partial Class Form1
         ' Label77
         ' 
         Label77.AutoSize = True
-        Label77.Font = New Font("Segoe UI", 9.857143F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label77.Font = New Font("Microsoft Sans Serif", 9.857143F)
         Label77.Location = New Point(19, 43)
         Label77.Name = "Label77"
-        Label77.Size = New Size(193, 32)
+        Label77.Size = New Size(167, 29)
         Label77.TabIndex = 46
-        Label77.Text = "C, Piezo Cap [nF]"
+        Label77.Text = "Co, Piezo Cap"
         ' 
         ' Label74
         ' 
         Label74.AutoSize = True
-        Label74.Font = New Font("Segoe UI", 9.857143F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label74.Location = New Point(19, 264)
+        Label74.Font = New Font("Microsoft Sans Serif", 9.857143F)
+        Label74.Location = New Point(19, 408)
         Label74.Name = "Label74"
-        Label74.Size = New Size(289, 32)
+        Label74.Size = New Size(293, 29)
         Label74.TabIndex = 45
         Label74.Text = "Power consumption [VAR]"
         ' 
         ' TextBox51
         ' 
-        TextBox51.Location = New Point(352, 264)
+        TextBox51.Font = New Font("Microsoft Sans Serif", 9.857143F)
+        TextBox51.Location = New Point(352, 408)
         TextBox51.Name = "TextBox51"
-        TextBox51.Size = New Size(131, 38)
+        TextBox51.Size = New Size(131, 34)
         TextBox51.TabIndex = 44
         TextBox51.Text = " "
         TextBox51.TextAlign = HorizontalAlignment.Center
         ' 
         ' TextBox38
         ' 
-        TextBox38.Location = New Point(352, 219)
+        TextBox38.Font = New Font("Microsoft Sans Serif", 9.857143F)
+        TextBox38.Location = New Point(352, 363)
         TextBox38.Name = "TextBox38"
-        TextBox38.Size = New Size(131, 38)
+        TextBox38.Size = New Size(131, 34)
         TextBox38.TabIndex = 42
         TextBox38.Text = " "
         TextBox38.TextAlign = HorizontalAlignment.Center
@@ -2575,13 +2810,13 @@ Partial Class Form1
         ' NumericUpDown27
         ' 
         NumericUpDown27.BackColor = Color.Yellow
-        NumericUpDown27.Font = New Font("Segoe UI", 9.857143F)
+        NumericUpDown27.Font = New Font("Microsoft Sans Serif", 9.857143F)
         NumericUpDown27.Increment = New Decimal(New Integer() {10, 0, 0, 0})
-        NumericUpDown27.Location = New Point(352, 128)
+        NumericUpDown27.Location = New Point(352, 272)
         NumericUpDown27.Maximum = New Decimal(New Integer() {1000, 0, 0, 0})
         NumericUpDown27.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         NumericUpDown27.Name = "NumericUpDown27"
-        NumericUpDown27.Size = New Size(131, 38)
+        NumericUpDown27.Size = New Size(131, 34)
         NumericUpDown27.TabIndex = 37
         NumericUpDown27.TextAlign = HorizontalAlignment.Center
         NumericUpDown27.Value = New Decimal(New Integer() {300, 0, 0, 0})
@@ -2589,20 +2824,20 @@ Partial Class Form1
         ' Label59
         ' 
         Label59.AutoSize = True
-        Label59.Font = New Font("Segoe UI", 9.857143F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label59.Location = New Point(15, 132)
+        Label59.Font = New Font("Microsoft Sans Serif", 9.857143F)
+        Label59.Location = New Point(15, 276)
         Label59.Name = "Label59"
-        Label59.Size = New Size(222, 32)
+        Label59.Size = New Size(213, 29)
         Label59.TabIndex = 28
         Label59.Text = "Peak-Peak Volt [V]"
         ' 
         ' Label72
         ' 
         Label72.AutoSize = True
-        Label72.Font = New Font("Segoe UI", 9.857143F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label72.Location = New Point(15, 221)
+        Label72.Font = New Font("Microsoft Sans Serif", 9.857143F)
+        Label72.Location = New Point(15, 365)
         Label72.Name = "Label72"
-        Label72.Size = New Size(102, 32)
+        Label72.Size = New Size(99, 29)
         Label72.TabIndex = 26
         Label72.Text = "Z [Ohm]"
         ' 
@@ -2709,10 +2944,20 @@ Partial Class Form1
         CType(NumericUpDown30, ComponentModel.ISupportInitialize).EndInit()
         TabPage9.ResumeLayout(False)
         TabPage9.PerformLayout()
+        GroupBox12.ResumeLayout(False)
+        CType(PictureBox10, ComponentModel.ISupportInitialize).EndInit()
         GroupBox21.ResumeLayout(False)
         GroupBox21.PerformLayout()
-        CType(NumericUpDown7, ComponentModel.ISupportInitialize).EndInit()
+        Panel3.ResumeLayout(False)
+        Panel3.PerformLayout()
+        Panel2.ResumeLayout(False)
+        Panel2.PerformLayout()
+        Panel1.ResumeLayout(False)
+        Panel1.PerformLayout()
+        CType(NumericUpDown36, ComponentModel.ISupportInitialize).EndInit()
+        CType(NumericUpDown35, ComponentModel.ISupportInitialize).EndInit()
         CType(NumericUpDown34, ComponentModel.ISupportInitialize).EndInit()
+        CType(NumericUpDown7, ComponentModel.ISupportInitialize).EndInit()
         CType(NumericUpDown33, ComponentModel.ISupportInitialize).EndInit()
         CType(NumericUpDown27, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
@@ -2854,7 +3099,6 @@ Partial Class Form1
     Friend WithEvents TextBox37 As TextBox
     Friend WithEvents Label52 As Label
     Friend WithEvents TextBox36 As TextBox
-    Friend WithEvents Label51 As Label
     Friend WithEvents TextBox35 As TextBox
     Friend WithEvents Label50 As Label
     Friend WithEvents TextBox34 As TextBox
@@ -2936,5 +3180,21 @@ Partial Class Form1
     Friend WithEvents Label77 As Label
     Friend WithEvents NumericUpDown34 As NumericUpDown
     Friend WithEvents NumericUpDown7 As NumericUpDown
+    Friend WithEvents PictureBox10 As PictureBox
+    Friend WithEvents NumericUpDown36 As NumericUpDown
+    Friend WithEvents Label51 As Label
+    Friend WithEvents NumericUpDown35 As NumericUpDown
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents RadioButton2 As RadioButton
+    Friend WithEvents RadioButton1 As RadioButton
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents RadioButton7 As RadioButton
+    Friend WithEvents RadioButton8 As RadioButton
+    Friend WithEvents RadioButton9 As RadioButton
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents RadioButton4 As RadioButton
+    Friend WithEvents RadioButton5 As RadioButton
+    Friend WithEvents RadioButton6 As RadioButton
+    Friend WithEvents RadioButton3 As RadioButton
 
 End Class
