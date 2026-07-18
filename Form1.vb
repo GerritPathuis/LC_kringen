@@ -72,7 +72,7 @@ Public Class Form1
             .Items.Add("uH")
             .Items.Add("nH")
             .Items.Add("pH")
-            .SelectedIndex = 2
+            .SelectedIndex = 1
         End With
 
     End Sub
@@ -168,8 +168,8 @@ Public Class Form1
             TextBox14.Text = phase.ToString("F1")           '[degree]
             TextBox16.Text = q.ToString("F1")               '[-]
             '====== Actual numbers ======
-            TextBox22.Text = xc.ToString("F2")              '[ohm] actual at fact
-            TextBox21.Text = xl.ToString("F2")              '[ohm] actual at fact
+            TextBox22.Text = xc.ToString("F0")              '[ohm] actual at fact
+            TextBox21.Text = xl.ToString("F0")              '[ohm] actual at fact
             TextBox20.Text = zAct.ToString("F1")            '[ohm] actual at fact
             TextBox18.Text = phaseAct.ToString("F1")        '[degree] actual at fact   
             '====== Actual numbers ======

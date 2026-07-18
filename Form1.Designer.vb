@@ -405,7 +405,7 @@ Partial Class Form1
         TextBox3.Location = New Point(27, 378)
         TextBox3.Multiline = True
         TextBox3.Name = "TextBox3"
-        TextBox3.Size = New Size(593, 141)
+        TextBox3.Size = New Size(593, 192)
         TextBox3.TabIndex = 18
         TextBox3.Text = "https://e2e.ti.com/support/motor-drivers-group/motor-drivers/f/motor-drivers-forum/991693/faq-proper-rc-snubber-design-for-motor-drivers"
         ' 
@@ -484,9 +484,9 @@ Partial Class Form1
         Label3.Font = New Font("Segoe UI", 9.857143F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Label3.Location = New Point(32, 124)
         Label3.Name = "Label3"
-        Label3.Size = New Size(371, 37)
+        Label3.Size = New Size(179, 37)
         Label3.TabIndex = 5
-        Label3.Text = "V; Ring Voltage peak-peak [V]"
+        Label3.Text = "V; Ring  [Vpp]"
         ' 
         ' NumericUpDown3
         ' 
@@ -666,9 +666,9 @@ Partial Class Form1
         GroupBox8.Controls.Add(NumericUpDown15)
         GroupBox8.Controls.Add(Label31)
         GroupBox8.Controls.Add(Label35)
-        GroupBox8.Location = New Point(558, 255)
+        GroupBox8.Location = New Point(558, 253)
         GroupBox8.Name = "GroupBox8"
-        GroupBox8.Size = New Size(382, 191)
+        GroupBox8.Size = New Size(374, 191)
         GroupBox8.TabIndex = 33
         GroupBox8.TabStop = False
         GroupBox8.Text = "Power"
@@ -683,7 +683,7 @@ Partial Class Form1
         NumericUpDown16.Size = New Size(144, 42)
         NumericUpDown16.TabIndex = 54
         NumericUpDown16.TextAlign = HorizontalAlignment.Center
-        NumericUpDown16.Value = New Decimal(New Integer() {12, 0, 0, 0})
+        NumericUpDown16.Value = New Decimal(New Integer() {220, 0, 0, 0})
         ' 
         ' Label36
         ' 
@@ -691,9 +691,9 @@ Partial Class Form1
         Label36.Font = New Font("Segoe UI", 9.857143F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Label36.Location = New Point(19, 84)
         Label36.Name = "Label36"
-        Label36.Size = New Size(208, 37)
+        Label36.Size = New Size(154, 37)
         Label36.TabIndex = 53
-        Label36.Text = "Power Volt [Vac]"
+        Label36.Text = "Power [Vac]"
         ' 
         ' TextBox19
         ' 
@@ -750,7 +750,7 @@ Partial Class Form1
         GroupBox6.Controls.Add(Label29)
         GroupBox6.Location = New Point(558, 452)
         GroupBox6.Name = "GroupBox6"
-        GroupBox6.Size = New Size(382, 268)
+        GroupBox6.Size = New Size(379, 268)
         GroupBox6.TabIndex = 32
         GroupBox6.TabStop = False
         GroupBox6.Text = "Actual numbers"
@@ -1139,7 +1139,7 @@ Partial Class Form1
         NumericUpDown5.Size = New Size(142, 42)
         NumericUpDown5.TabIndex = 16
         NumericUpDown5.TextAlign = HorizontalAlignment.Center
-        NumericUpDown5.Value = New Decimal(New Integer() {12, 0, 0, 0})
+        NumericUpDown5.Value = New Decimal(New Integer() {69, 0, 0, 65536})
         ' 
         ' Label5
         ' 
@@ -2393,7 +2393,7 @@ Partial Class Form1
         ' Label66
         ' 
         Label66.AutoSize = True
-        Label66.Font = New Font("Segoe UI Black", 12.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label66.Font = New Font("Segoe UI Black", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label66.Location = New Point(48, 30)
         Label66.Name = "Label66"
         Label66.Size = New Size(503, 45)
@@ -2514,7 +2514,7 @@ Partial Class Form1
         ' Label9
         ' 
         Label9.AutoSize = True
-        Label9.Font = New Font("Segoe UI Black", 12.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label9.Font = New Font("Segoe UI Black", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label9.Location = New Point(57, 24)
         Label9.Name = "Label9"
         Label9.Size = New Size(438, 45)
@@ -2690,7 +2690,7 @@ Partial Class Form1
         ' 
         ' Form1
         ' 
-        AutoScaleDimensions = New SizeF(14.0F, 36.0F)
+        AutoScaleDimensions = New SizeF(14F, 36F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1673, 804)
         Controls.Add(TabControl1)
