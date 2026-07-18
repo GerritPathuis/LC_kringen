@@ -11,7 +11,8 @@ Public Class Form1
         TextBox27.Text = sb.ToString
 
         sb.Clear()
-        sb.AppendLine("C= C1+C2+...+Cx")
+        sb.AppendLine("Series C= C1+C2+...+Cx")
+        sb.AppendLine("Parallel 1/C= 1/C1+1/C2+...+1/Cx")
         TextBox15.Text = sb.ToString
 
         sb.Clear()
@@ -33,9 +34,10 @@ Public Class Form1
         sb.Clear()
         sb.AppendLine("Measurement on 50W Piezo elements")
         sb.AppendLine("Resonance= 28.2kHz")
-        sb.AppendLine("Impedance is < 1.5 ohm at 500 Hz from resonance")
-        sb.AppendLine("Do not run at resonance")
-        sb.AppendLine("Piezo element 4.5 nF and 2 ohm in series")
+        sb.AppendLine("Impedance is 30 ohm at resonance")
+        sb.AppendLine("Run near resonance for efficiency")
+        sb.AppendLine("Run above resonance for ZVS")
+        sb.AppendLine("Piezo element 4.5 nF and 30 ohm in series")
         TextBox53.Text = sb.ToString
 
     End Sub
@@ -135,12 +137,17 @@ Public Class Form1
         TextBox13.Text = sb.ToString
     End Sub
 
-    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click, TabPage5.Enter
-        Dim C1 = NumericUpDown31.Value              '[uF]
-        Dim C2 = NumericUpDown32.Value              '[uF]
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click, TabPage5.Enter, NumericUpDown32.ValueChanged, NumericUpDown31.ValueChanged
+        Dim C1 = NumericUpDown31.Value                  '[uF]
+        Dim C2 = NumericUpDown32.Value                  '[uF]
 
-        Dim Cseries = 1 / (1 / C1 + 1 / C2)         '[uF]
+        If C1 <= 0 Then C1 = 0.0000001
+        If C2 <= 0 Then C2 = 0.0000001
+
+        Dim Cseries = 1 / (1 / C1 + 1 / C2)    '[uF]
+        Dim Cparallel = C1 + C2                    '[uF]
         TextBox52.Text = Cseries.ToString("F2")
+        TextBox54.Text = Cparallel.ToString("F2")
     End Sub
 
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
@@ -274,21 +281,9 @@ Public Class Form1
         TextBox47.Text = (c * 10 ^ 6).ToString("F2")        '[uF] series
     End Sub
 
-    Private Sub Button13_Click(sender As Object, e As EventArgs) Handles Button13.Click, NumericUpDown27.ValueChanged, NumericUpDown33.ValueChanged, NumericUpDown34.ValueChanged, NumericUpDown7.ValueChanged, RadioButton1.CheckedChanged, RadioButton2.CheckedChanged, RadioButton3.CheckedChanged, RadioButton6.CheckedChanged, RadioButton5.CheckedChanged, RadioButton4.CheckedChanged, RadioButton9.CheckedChanged, RadioButton8.CheckedChanged, RadioButton7.CheckedChanged, NumericUpDown36.ValueChanged, NumericUpDown35.ValueChanged
-
-        Dim Co = NumericUpDown33.Value    '[F]
+    Private Sub Button13_Click(sender As Object, e As EventArgs) Handles Button13.Click, NumericUpDown27.ValueChanged, NumericUpDown34.ValueChanged, NumericUpDown7.ValueChanged, RadioButton6.CheckedChanged, RadioButton5.CheckedChanged, RadioButton4.CheckedChanged, NumericUpDown36.ValueChanged
         Dim C1 = NumericUpDown36.Value    '[F]
         Dim R1 = NumericUpDown34.Value    '[Ohm]
-        Dim L1 = NumericUpDown35.Value    '[H]
-
-        '==== Co unit conversion ====   
-        If RadioButton1.Checked Then
-            Co /= 10 ^ 6
-        ElseIf RadioButton2.Checked Then
-            Co /= 10 ^ 9
-        ElseIf RadioButton3.Checked Then
-            Co /= 10 ^ 12
-        End If
 
         '==== C1 unit conversion ====   
         If RadioButton6.Checked Then
@@ -299,30 +294,16 @@ Public Class Form1
             C1 /= 10 ^ 12
         End If
 
-        '==== L1 unit conversion ====   
-        If RadioButton9.Checked Then
-            L1 /= 10 ^ 6
-        ElseIf RadioButton8.Checked Then
-            L1 /= 10 ^ 9
-        ElseIf RadioButton7.Checked Then
-            L1 /= 10 ^ 12
-        End If
-
         Dim freq = NumericUpDown7.Value * 10 ^ 3    '[Hz] frequency of the piezo
         Dim Vpp = NumericUpDown27.Value             '[V]
         Dim Vrms = Vpp / (2 * Math.Sqrt(2))         '[V] RMS current over the load
 
-        Dim Xc0 = 1 / (2 * Math.PI * freq * Co)     '[Ohm] capacitive reactance at 28kHz
         Dim Xc1 = 1 / (2 * Math.PI * freq * C1)     '[Ohm] capacitive reactance at 28kHz
-        Dim XL1 = 2 * Math.PI * freq * L1           '[Ohm] inductive reactance at 28kHz
+        Dim Xseries = Xc1 + R1                      '[Ohm] series reactance at 28kHz
 
-        Dim Xseries = Xc1 + XL1 + R1                '[Ohm] series reactance at 28kHz
+        Dim P = Vrms ^ 2 / Xseries                  '[W] power through the load
 
-        Dim Z = 1 / (1 / Xc0 + 1 / Xseries)         '[Ohm] total impedance at 28kHz
-
-        Dim P = Vrms ^ 2 / Z                        '[W] power through the load
-
-        TextBox38.Text = Z.ToString("F1")           '[ohm] series
+        TextBox38.Text = Xseries.ToString("F1")     '[ohm] series
         TextBox51.Text = P.ToString("F1")           '[W] series
     End Sub
 End Class
